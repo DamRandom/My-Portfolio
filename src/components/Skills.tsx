@@ -1,60 +1,80 @@
-import { useState } from "react";
+"use client";
+
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Skills() {
   const skillCategories = [
     {
-      category: "Web Design",
+      category: "Language",
       description:
-        "The visual and structural creation of websites, focusing on the appearance and usability you experience while browsing.",
+        "JavaScript, Java, TypeScript, and Python — the core pillars to build efficient, modern software.",
       skills: [
-        { name: "HTML", level: 90 },
-        { name: "CSS", level: 85 },
-        { name: "Tailwind CSS", level: 80 },
-        { name: "Material UI", level: 70 },
+        { name: "JavaScript", level: 95 },
+        { name: "Java", level: 60 },
+        { name: "TypeScript", level: 85 },
+        { name: "Python", level: 65 },
       ],
     },
     {
-      category: "Front-end Development",
+      category: "Front-End",
       description:
-        "Where websites come to life, creating interactivity and functions that make everything respond quickly and smoothly.",
+        "Libraries and frameworks for building dynamic user interfaces and experiences.",
       skills: [
-        { name: "JavaScript", level: 90 },
-        { name: "React", level: 85 },
-        { name: "TypeScript", level: 75 },
-        { name: "Next.js", level: 70 },
+        { name: "React", level: 90 },
+        { name: "Next.js", level: 85 },
+        { name: "Vue", level: 60 },
       ],
     },
     {
-      category: "Back-end & Databases",
+      category: "Styling Libraries",
       description:
-        "The hidden engine managing data, users, and processes, ensuring information flows and is stored correctly.",
+        "Tools to design elegant, responsive interfaces without hassle.",
       skills: [
-        { name: "Node.js (npm)", level: 75 },
-        { name: "PostgreSQL", level: 70 },
-        { name: "MySQL", level: 65 },
+        { name: "Tailwind CSS", level: 85 },
+        { name: "Material UI", level: 75 },
+        { name: "Bootstrap", level: 60 },
+        { name: "Chakra UI", level: 55 },
       ],
     },
     {
-      category: "General Programming",
-      description:
-        "Languages used to solve logical problems, automate tasks, and build programs beyond just websites.",
+      category: "Backend",
+      description: "Technologies for server logic and data management.",
       skills: [
-        { name: "Python", level: 70 },
-        { name: "Java", level: 65 },
+        { name: "Node.js", level: 80 },
+        { name: "Django", level: 55 },
+      ],
+    },
+    {
+      category: "Databases",
+      description: "Systems for storing and querying information efficiently.",
+      skills: [
+        { name: "MySQL", level: 60 },
+        { name: "PostgreSQL", level: 65 },
+        { name: "SQLite", level: 50 },
       ],
     },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [animatedLevels, setAnimatedLevels] = useState<number[]>([]);
 
   const { category, description, skills } = skillCategories[currentIndex];
+
+  useEffect(() => {
+    setAnimatedLevels(new Array(skills.length).fill(0));
+    const timeout = setTimeout(() => {
+      setAnimatedLevels(skills.map((s) => s.level));
+    }, 100); // Delay to trigger animation
+
+    return () => clearTimeout(timeout);
+  }, [currentIndex]);
 
   return (
     <section
       id="skills"
-      className="w-full p-12 bg-[#F5F5F5] text-[#06061B]"
+      className="w-full p-12 bg-[#f0eded] text-[#06061B]"
       style={{
-        borderRadius: 0,
         boxShadow: `
           0 8px 15px rgba(6, 6, 27, 0.15),
           0 4px 6px rgba(6, 6, 27, 0.1),
@@ -62,72 +82,117 @@ export default function Skills() {
         `,
       }}
     >
-      <h2 className="text-4xl font-lora font-semibold mb-6 border-b border-[#06061B] text-right">
-        Skills
+      <h2 className="text-4xl font-lora font-semibold mb-6 border-b border-[#06061B] mx-20 text-right">
+        Skills & Technologies
       </h2>
 
-      <p className="mb-12 max-w-3xl mx-auto text-justify text-lg font-normal">
-        Here I list my technical skills organized so anyone can understand them,
-        whether you’re technical or not. If you’re an expert, jump straight to
-        the bars and categories.
+      <p className="text-lg font-lora leading-relaxed tracking-wide text-[#06061B] text-justify mx-20 my-6">
+        These are some of the skills, frameworks, and tools I am proficient in
+        and comfortable working with. This does not mean I lack knowledge or
+        expertise in other areas, but rather that these are the ones I am best
+        prepared to deliver high-quality results with. That said, I am always
+        open to learning new technologies and tools.
       </p>
 
-      <div
-        className="max-w-6xl mx-auto bg-[#FAFAFA] shadow-lg p-8 flex flex-col lg:flex-row justify-center items-center gap-10"
-        style={{ borderRadius: 0 }}
-      >
+      <div className="max-w-6xl mx-auto font-lora bg-white/10 backdrop-blur-[20px] shadow-2xl border border-white/20 p-8 flex flex-col lg:flex-row justify-center items-center gap-10">
         <div className="lg:w-1/3 order-2 lg:order-1 text-center">
-          <h3 className="text-2xl font-semibold mb-2">{category}</h3>
-          <p className="text-base font-light">{description}</p>
-        </div>
-        <div
-          className="lg:w-2/3 order-1 lg:order-2 w-full max-w-md"
-          style={{ minHeight: "280px" }} // suficiente para la categoría más larga
-        >
-          {skills.map(({ name, level }) => (
-  <div key={name} className="mb-5 group relative flex flex-col gap-1">
-    <div className="flex justify-between items-center font-semibold text-[#06061B]">
-      <span>{name}</span>
-      {/* No percentage here */}
-    </div>
-    <div
-      className="w-full bg-[#06061B]/10 rounded-full h-3 relative overflow-hidden cursor-pointer"
-      style={{}}
-    >
-      <div
-        className="bg-gradient-to-r from-[#06061B] to-[#101031]"
-        style={{
-          width: `${level}%`,
-          height: "100%",
-          borderRadius: "9999px",
-          transition: "width 0.4s ease-in-out",
-        }}
-      />
-      <span
-        className="absolute -top-7 left-1/2 -translate-x-1/2 bg-[#06061B] text-white text-xs px-2 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none select-none"
-        style={{ whiteSpace: "nowrap" }}
-      >
-        {level}%
-      </span>
-    </div>
-  </div>
-))}
+          <AnimatePresence mode="wait">
+            <motion.h3
+              key={category}
+              className="text-2xl font-semibold mb-2"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 20 }}
+              transition={{ duration: 0.3 }}
+            >
+              {category}
+            </motion.h3>
+          </AnimatePresence>
 
+          <AnimatePresence mode="wait">
+            <motion.p
+              key={description}
+              className="text-base font-light"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.4 }}
+            >
+              {description}
+            </motion.p>
+          </AnimatePresence>
 
-          <div className="flex justify-center mt-8 gap-4">
-            {skillCategories.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setCurrentIndex(idx)}
-                aria-label={`Select category ${idx + 1}`}
-                className={`w-4 h-4 rounded-full transition-all duration-300 ${
-                  currentIndex === idx
-                    ? "bg-[#06061B] scale-125"
-                    : "bg-[#06061B]/30 hover:bg-[#06061B]/60"
-                }`}
-              />
+          <div className="flex font-lora flex-wrap justify-center gap-2 mt-4">
+            {skillCategories.map((cat, i) => (
+              <motion.button
+                key={cat.category}
+                onClick={() => setCurrentIndex(i)}
+                initial={false}
+                animate={{
+                  backgroundColor:
+                    currentIndex === i ? "#e9e9e9" : "rgba(255,255,255,0.7)",
+                  color: "#06061B",
+                  boxShadow:
+                    currentIndex === i
+                      ? "0 4px 8px rgba(6, 6, 41, 0.25)"
+                      : "0 4px 8px rgba(6, 6, 41, 0.15)",
+                  scale: 1,
+                }}
+                whileHover={{
+                  scale: 0.97,
+                  boxShadow: "0 2px 4px rgba(6, 6, 41, 0.1)",
+                  backgroundColor: currentIndex === i ? "#dcdcdc" : "#f7f7f7",
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 200,
+                  damping: 20,
+                  duration: 0.3,
+                }}
+                className={`px-3 py-1 text-sm font-medium
+                  backdrop-blur-sm
+                  focus:outline-none
+                  focus:ring-2
+                  focus:ring-[#06061B]
+                  focus:ring-offset-1
+                  rounded-none
+                  border border-transparent
+                `}
+              >
+                {cat.category}
+              </motion.button>
             ))}
           </div>
+        </div>
+
+        <div
+          className="lg:w-2/3 order-1 lg:order-2 w-full max-w-md"
+          style={{ minHeight: "280px" }}
+        >
+          {skills.map(({ name }, idx) => (
+            <div key={name} className="mb-5 group relative flex flex-col gap-1">
+              <div className="flex justify-between items-center font-semibold text-[#06061B]">
+                <span>{name}</span>
+              </div>
+              <div className="w-full bg-[#06061B]/10 rounded-full h-3 relative overflow-hidden cursor-pointer">
+                <div
+                  className="bg-gradient-to-r from-[#06061B] to-[#101031]"
+                  style={{
+                    width: `${animatedLevels[idx]}%`,
+                    height: "100%",
+                    borderRadius: "9999px",
+                    transition: "width 1s ease-in-out",
+                  }}
+                />
+                <span
+                  className="absolute -top-7 left-1/2 -translate-x-1/2 bg-[#06061B] text-white text-xs px-2 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none select-none"
+                  style={{ whiteSpace: "nowrap" }}
+                >
+                  {skills[idx].level}%
+                </span>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -1,4 +1,8 @@
 // components/Hero.jsx
+"use client";
+
+import { motion } from "framer-motion";
+
 export default function Hero() {
   return (
     <section
@@ -7,31 +11,62 @@ export default function Hero() {
       aria-label="Hero Section"
     >
       {/* Gradiente blanco suave desde la izquierda */}
-      <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/60 to-transparent z-0" />
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/60 to-transparent z-0"
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+      />
 
-      <div className="relative z-10 max-w-4xl text-[#060629] translate-y-[-10%] md:ml-8">
-        <h2 className="text-7xl font-lora font-extrabold uppercase tracking-wide mb-4">
+      <motion.div
+        className="relative z-10 max-w-4xl text-[#060629] translate-y-[-10%] md:ml-8"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+      >
+        <motion.h2
+          className="text-7xl font-lora font-extrabold uppercase tracking-wide mb-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
+        >
           HI THERE,
-        </h2>
-        <h1 className="text-4xl md:text-5xl font-lora font-semibold mb-8">
-          I&apos;m Damian Brito, <br />
-          a Computer Science Engineer
-        </h1>
-        <div className="flex gap-6">
-          <a
+        </motion.h2>
+
+        <motion.h1
+          className="text-4xl md:text-5xl font-lora font-semibold mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.7 }}
+        >
+          I&apos;m Damian Brito, <br />a Computer Science Engineer
+        </motion.h1>
+
+        <motion.div
+          className="flex gap-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 1 }}
+        >
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
             href="#contact"
-            className="bg-[#06061B] text-[#FAFAFA] px-8 py-3 rounded-md font-lora font-semibold tracking-wide shadow-md hover:bg-[#060629] hover:text-white transition"
+            className="bg-[#060629] text-[#F5F5F5] px-8 py-3 font-lora font-semibold tracking-wide shadow-[0_8px_20px_rgba(6,6,41,0.4)] transition transform hover:translate-y-1 hover:shadow-[0_4px_10px_rgba(6,6,41,0.6)] hover:bg-[#FAFAFA] hover:text-[#060629]"
           >
-            Contact Me
-          </a>
-          <a
+            Get in Touch
+          </motion.a>
+
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
             href="#projects"
-            className="border border-[#060629] text-[#060629] px-8 py-3 rounded-md font-semibold tracking-wide hover:bg-[#060629] hover:text-white transition"
+            className="bg-[#F5F5F5] text-[#060629] px-8 py-3 font-lora font-semibold tracking-wide shadow-[0_8px_20px_rgba(6,6,41,0.15)] transition transform hover:translate-y-1 hover:shadow-[0_4px_10px_rgba(6,6,41,0.3)] hover:bg-[#060629] hover:text-[#F5F5F5]"
           >
-            My Projects
-          </a>
-        </div>
-      </div>
+            My Work
+          </motion.a>
+        </motion.div>
+      </motion.div>
     </section>
-  )
+  );
 }
