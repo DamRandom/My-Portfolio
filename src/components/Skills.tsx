@@ -62,13 +62,15 @@ export default function Skills() {
   const { category, description, skills } = skillCategories[currentIndex];
 
   useEffect(() => {
-    setAnimatedLevels(new Array(skills.length).fill(0));
-    const timeout = setTimeout(() => {
-      setAnimatedLevels(skills.map((s) => s.level));
-    }, 100); // Delay to trigger animation
+  setAnimatedLevels(new Array(skills.length).fill(0));
+  const timeout = setTimeout(() => {
+    setAnimatedLevels(skills.map((s) => s.level));
+  }, 100);
 
-    return () => clearTimeout(timeout);
-  }, [currentIndex]);
+  return () => clearTimeout(timeout);
+// eslint-disable-next-line react-hooks/exhaustive-deps
+}, [currentIndex]);
+
 
   return (
     <section
