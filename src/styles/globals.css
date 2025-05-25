@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --background: #F5F5F5;
+  --foreground: #06061B;
+  --card: #FAFAFA;
+  --element: #060629;
+  --hover: #101031;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #06061B;
+    --foreground: #F5F5F5;
+    --card: #101010;
+    --element: #F5F5F5;
+    --hover: #FAFAFA;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Inter', sans-serif;
+}
