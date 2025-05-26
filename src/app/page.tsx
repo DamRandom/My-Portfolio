@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import AboutMe from '@/components/AboutMe'
 import Hero from '../components/Hero'
 import Skills from '../components/Skills'  // importa Skills
+import ProjectSection from '@/components/Projects'
 
 export default function Home() {
   const [offsetY, setOffsetY] = useState(0)
@@ -39,6 +40,7 @@ export default function Home() {
       {/* Sección Skills fuera del fondo parallax */}
       <div className="relative z-20">
   <Skills />
+  <ProjectSection/>
 </div>
 
     </>
