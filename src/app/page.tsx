@@ -2,8 +2,9 @@
 import { useEffect, useState } from 'react'
 import AboutMe from '@/components/AboutMe'
 import Hero from '../components/Hero'
-import Skills from '../components/Skills'  // importa Skills
+import Skills from '../components/Skills'  
 import ProjectSection from '@/components/Projects'
+import ContactSection from '@/components/ContactMe'
 
 export default function Home() {
   const [offsetY, setOffsetY] = useState(0)
@@ -41,6 +42,7 @@ export default function Home() {
       <div className="relative z-20">
   <Skills />
   <ProjectSection/>
+  <ContactSection />
 </div>
 
     </>

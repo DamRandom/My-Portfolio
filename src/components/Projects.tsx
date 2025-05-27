@@ -50,7 +50,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="w-full p-12 bg-[#f0eded] text-[#06061B]">
+    <section id="projects" className="w-full p-20 bg-[#f0eded] text-[#06061B]">
       <h2 className="text-4xl font-lora font-semibold mb-6 border-b border-[#06061B] mx-20 text-right">
         Projects & Work
       </h2>
