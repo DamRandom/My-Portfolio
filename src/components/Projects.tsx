@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
+import { Tooltip } from '@/components/ui/Tooltip';
 
 const projects = [
   {
@@ -30,15 +31,21 @@ const projects = [
     ],
   },
   {
-  title: "LitHub",
-  image: "/images/projects/lithub.png",
-  description:
-    "LitHub is a personal book management platform that allows users to track their reading progress, add books, and receive personalized recommendations. Built with Next.js, it also includes an ebook reader for PDF and EPUB files.",
-  github: "https://github.com/DamRandom/LitHub",
-  vercel: "https://lithub.vercel.app", 
-  tags: ["Personal Dashboard", "Ebook Reader", "PDF", "EPUB", "Reading Tracker", "English"],
-}
-
+    title: "LitHub",
+    image: "/images/projects/lithub.png",
+    description:
+      "LitHub is a personal book management platform that allows users to track their reading progress, add books, and receive personalized recommendations. Built with Next.js, it also includes an ebook reader for PDF and EPUB files.",
+    github: "https://github.com/DamRandom/LitHub",
+    vercel: "https://lithub.vercel.app",
+    tags: [
+      "Personal Dashboard",
+      "Ebook Reader",
+      "PDF",
+      "EPUB",
+      "Reading Tracker",
+      "English",
+    ],
+  },
 ];
 
 export default function Projects() {
@@ -227,24 +234,28 @@ export default function Projects() {
               </div>
 
               <div className="flex gap-6 text-[#06061B] text-xl">
-                <a
-                  href={github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${title} GitHub Repository`}
-                  className="hover:text-[#101031] transition-colors"
-                >
-                  <FiGithub />
-                </a>
-                <a
-                  href={vercel}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${title} Live Site`}
-                  className="hover:text-[#101031] transition-colors"
-                >
-                  <FiExternalLink />
-                </a>
+                <Tooltip text="View code">
+                  <a
+                    href={github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${title} GitHub Repository`}
+                    className="hover:text-[#101031] transition-colors"
+                  >
+                    <FiGithub />
+                  </a>
+                </Tooltip>
+                <Tooltip text="Visit website">
+                  <a
+                    href={vercel}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${title} Live Site`}
+                    className="hover:text-[#101031] transition-colors"
+                  >
+                    <FiExternalLink />
+                  </a>
+                </Tooltip>
               </div>
             </div>
           </motion.article>
