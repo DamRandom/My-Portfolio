@@ -62,7 +62,7 @@ export default function ContactSection() {
           {/* Social icons centered, images from /images/logos/ */}
           <div className="flex justify-center gap-10 mb-10">
             <a
-              href="https://instagram.com/damian"
+              href="https://www.instagram.com/dam_random/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
@@ -77,7 +77,7 @@ export default function ContactSection() {
               />
             </a>
             <a
-              href="https://linkedin.com/in/damian"
+              href="www.linkedin.com/in/damian-brito-5437a2214"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -92,7 +92,23 @@ export default function ContactSection() {
               />
             </a>
             <a
-              href="https://t.me/damian"
+              href="https://github.com/DamRandom"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="hover:opacity-70 transition-opacity"
+            >
+              <Image
+                src="/images/logos/github.png"
+                alt="GitHub"
+                width={32}
+                height={32}
+                priority={true}
+              />
+            </a>
+
+            <a
+              href="https://t.me/Souta_k"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Telegram"
