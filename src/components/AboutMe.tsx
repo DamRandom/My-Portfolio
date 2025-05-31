@@ -5,14 +5,18 @@ export default function AboutMe() {
   return (
     <section
       id="about"
-      className="relative w-full py-24 px-6 md:px-12 lg:px-16 xl:px-24 flex justify-center"
+      className="relative w-full py-16 px-6 sm:py-20 sm:px-8 md:px-12 lg:px-16 xl:px-24 flex justify-center"
       style={{ fontFamily: "'Playfair Display', serif" }}
     >
       {/* Gradiente de fondo sin animación */}
       <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/60 to-transparent z-0" />
 
       <div
-        className="relative z-10 w-full max-w-[90rem] bg-white/10 backdrop-blur-[20px] shadow-2xl border border-white/20 p-12"
+        className="
+          relative z-10 w-full max-w-[90rem]
+          bg-white/10 backdrop-blur-[20px] shadow-2xl border border-white/20
+          p-8 sm:p-12
+          "
         style={{ boxShadow: "0 8px 32px 0 rgba(6, 6, 41, 0.4)" }}
       >
         <motion.h2
@@ -20,7 +24,12 @@ export default function AboutMe() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="text-4xl font-lora font-semibold mb-8 border-b border-[#060629] text-[#06061B] text-right w-full"
+          className="
+            text-3xl sm:text-4xl font-lora font-semibold mb-6 sm:mb-8
+            border-b border-[#060629] text-[#06061B]
+            w-full
+            text-center sm:text-right
+          "
         >
           About Me
         </motion.h2>
@@ -30,7 +39,10 @@ export default function AboutMe() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
-          className="text-lg font-lora leading-relaxed tracking-wide text-[#06061B] text-justify"
+          className="
+            text-base sm:text-lg font-lora leading-relaxed tracking-wide
+            text-[#06061B] text-justify
+          "
         >
           My name is Damian Brito, a 23-year-old Computer Science Engineer,
           shaped by four intense years at the University of Information Sciences

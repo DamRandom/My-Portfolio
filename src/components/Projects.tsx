@@ -72,9 +72,7 @@ export default function Projects() {
           >
             {title === "Rose-Reverie" ? (
               <div
-                className="relative shadow-lg border border-white/20 overflow-hidden"
-                style={{ width: 300, height: 199 }}
-              >
+                className="relative shadow-lg border border-white/20 overflow-hidden">
                 <Image
                   src={image}
                   alt={title}
@@ -92,9 +90,7 @@ export default function Projects() {
       "
                 >
                   <div
-                    className="absolute left-0 right-0 bg-[#0C1212] flex justify-center items-center"
-                    style={{ height: "120px", top: "calc(50% - 60px)" }}
-                  >
+                    className="absolute left-0 right-0 bg-[#0C1212] flex justify-center items-center">
                     <Image
                       src="/images/projects/rose-reverie-logo.png"
                       alt="Logo"
@@ -107,9 +103,7 @@ export default function Projects() {
               </div>
             ) : title === "PowerHaus" ? (
               <div
-                className="relative shadow-lg border border-white/20 overflow-hidden"
-                style={{ width: 300, height: 199 }}
-              >
+                className="relative shadow-lg border border-white/20 overflow-hidden">
                 <Image
                   src={image}
                   alt={title}
@@ -127,9 +121,7 @@ export default function Projects() {
       "
                 >
                   <div
-                    className="absolute left-0 right-0 bg-[#101828] flex justify-center items-center"
-                    style={{ height: "120px", top: "calc(50% - 60px)" }}
-                  >
+                    className="absolute left-0 right-0 bg-[#101828] flex justify-center items-center">
                     <Image
                       src="/images/projects/powerhaus-logo.png"
                       alt="PowerHaus Logo"
@@ -142,9 +134,7 @@ export default function Projects() {
               </div>
             ) : title === "LitHub" ? (
               <div
-                className="relative shadow-lg border border-white/20 overflow-hidden"
-                style={{ width: 300, height: 199 }}
-              >
+                className="relative shadow-lg border border-white/20 overflow-hidden">
                 <Image
                   src={image}
                   alt={title}
@@ -162,12 +152,10 @@ export default function Projects() {
       "
                 >
                   <div
-                    className="absolute left-0 right-0 bg-[#F4F5F7] shadow-lg flex justify-center items-center"
-                    style={{ height: "120px", top: "calc(50% - 60px)" }}
-                  >
+                    className="absolute left-0 right-0 bg-[#F4F5F7] shadow-lg flex justify-center items-center">
                     <Image
                       src="/images/projects/lithub-logo.png"
-                      alt="Blog CMS Logo"
+                      alt="Lithub Logo"
                       width={120}
                       height={40}
                       priority
@@ -177,9 +165,7 @@ export default function Projects() {
               </div>
             ) : (
               <div
-                className="relative shadow-lg border border-white/20 overflow-hidden"
-                style={{ width: 300, height: 199 }}
-              >
+                className="relative shadow-lg border border-white/20 overflow-hidden">
                 <Image
                   src={image}
                   alt={title}
