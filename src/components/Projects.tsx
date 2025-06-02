@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
-import { Tooltip } from '@/components/ui/Tooltip';
+import { Tooltip } from "@/components/ui/Tooltip";
 
 const projects = [
   {
@@ -50,17 +50,17 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="w-full p-20 bg-[#f0eded] text-[#06061B]">
-      <h2 className="text-4xl font-lora font-semibold mb-6 border-b border-[#06061B] mx-20 text-right">
+    <section id="projects" className="w-full px-6 sm:px-10 md:px-20 py-12 bg-[#f0eded] text-[#06061B]">
+      <h2 className="text-3xl sm:text-4xl font-lora font-semibold mb-6 border-b border-[#06061B] mx-0 sm:mx-20 text-center sm:text-right">
         Projects & Work
       </h2>
 
-      <p className="text-lg font-lora leading-relaxed tracking-wide text-[#06061B] text-justify mx-20 my-6">
+      <p className="text-base sm:text-lg font-lora leading-relaxed tracking-wide text-[#06061B] text-justify mx-0 sm:mx-20 my-6">
         Here are some of my projects to showcase my skills in building modern
         websites.
       </p>
 
-      <div className="max-w-6xl mx-auto font-lora bg-white/10 backdrop-blur-[20px] shadow-2xl border border-white/20 p-8 flex flex-col gap-12">
+      <div className="max-w-6xl mx-auto font-lora bg-white/10 backdrop-blur-[20px] shadow-2xl border border-white/20 p-6 sm:p-8 flex flex-col gap-12">
         {projects.map(({ title, image, description, github, vercel, tags }) => (
           <motion.article
             key={title}
@@ -71,8 +71,7 @@ export default function Projects() {
             transition={{ duration: 0.5 }}
           >
             {title === "Rose-Reverie" ? (
-              <div
-                className="relative shadow-lg border border-white/20 overflow-hidden">
+              <div className="relative shadow-lg border border-white/20 overflow-hidden w-full max-w-[300px] flex-shrink-0">
                 <Image
                   src={image}
                   alt={title}
@@ -83,14 +82,13 @@ export default function Projects() {
                 />
                 <div
                   className="
-        absolute inset-0 bg-[#501823] bg-opacity-40 backdrop-blur-sm
-        transition-opacity duration-300
-        hover:opacity-0
-        flex justify-center items-center
-      "
+                    absolute inset-0 bg-[#501823] bg-opacity-40 backdrop-blur-sm
+                    transition-opacity duration-300
+                    hover:opacity-0
+                    flex justify-center items-center
+                  "
                 >
-                  <div
-                    className="absolute left-0 right-0 bg-[#0C1212] flex justify-center items-center">
+                  <div className="absolute left-0 right-0 bg-[#0C1212] flex justify-center items-center">
                     <Image
                       src="/images/projects/rose-reverie-logo.png"
                       alt="Logo"
@@ -102,8 +100,7 @@ export default function Projects() {
                 </div>
               </div>
             ) : title === "PowerHaus" ? (
-              <div
-                className="relative shadow-lg border border-white/20 overflow-hidden">
+              <div className="relative shadow-lg border border-white/20 overflow-hidden w-full max-w-[300px] flex-shrink-0">
                 <Image
                   src={image}
                   alt={title}
@@ -114,14 +111,13 @@ export default function Projects() {
                 />
                 <div
                   className="
-        absolute inset-0 bg-[#D36112] bg-opacity-40 backdrop-blur-sm
-        transition-opacity duration-300
-        hover:opacity-0
-        flex justify-center items-center
-      "
+                    absolute inset-0 bg-[#D36112] bg-opacity-40 backdrop-blur-sm
+                    transition-opacity duration-300
+                    hover:opacity-0
+                    flex justify-center items-center
+                  "
                 >
-                  <div
-                    className="absolute left-0 right-0 bg-[#101828] flex justify-center items-center">
+                  <div className="absolute left-0 right-0 bg-[#101828] flex justify-center items-center">
                     <Image
                       src="/images/projects/powerhaus-logo.png"
                       alt="PowerHaus Logo"
@@ -133,8 +129,7 @@ export default function Projects() {
                 </div>
               </div>
             ) : title === "LitHub" ? (
-              <div
-                className="relative shadow-lg border border-white/20 overflow-hidden">
+              <div className="relative shadow-lg border border-white/20 overflow-hidden w-full max-w-[300px] flex-shrink-0">
                 <Image
                   src={image}
                   alt={title}
@@ -145,14 +140,13 @@ export default function Projects() {
                 />
                 <div
                   className="
-        absolute inset-0 bg-[#F3F4F6] bg-opacity-90 backdrop-blur-sm
-        transition-opacity duration-300
-        hover:opacity-0
-        flex justify-center items-center
-      "
+                    absolute inset-0 bg-[#F3F4F6] bg-opacity-90 backdrop-blur-sm
+                    transition-opacity duration-300
+                    hover:opacity-0
+                    flex justify-center items-center
+                  "
                 >
-                  <div
-                    className="absolute left-0 right-0 bg-[#F4F5F7] shadow-lg flex justify-center items-center">
+                  <div className="absolute left-0 right-0 bg-[#F4F5F7] shadow-lg flex justify-center items-center">
                     <Image
                       src="/images/projects/lithub-logo.png"
                       alt="Lithub Logo"
@@ -164,8 +158,7 @@ export default function Projects() {
                 </div>
               </div>
             ) : (
-              <div
-                className="relative shadow-lg border border-white/20 overflow-hidden">
+              <div className="relative shadow-lg border border-white/20 overflow-hidden w-full max-w-[300px] flex-shrink-0">
                 <Image
                   src={image}
                   alt={title}
@@ -177,11 +170,11 @@ export default function Projects() {
               </div>
             )}
 
-            <div className="flex flex-col justify-between lg:w-2/3">
-              <h3 className="text-2xl font-semibold mb-2 text-[#06061B]">
+            <div className="flex flex-col justify-between w-full lg:w-2/3">
+              <h3 className="text-xl sm:text-2xl font-semibold mb-2 text-[#06061B]">
                 {title}
               </h3>
-              <p className="text-base font-light mb-4 text-[#06061B]">
+              <p className="text-sm sm:text-base font-light mb-4 text-[#06061B]">
                 {description}
               </p>
 
@@ -203,7 +196,7 @@ export default function Projects() {
                       duration: 0.3,
                     }}
                     className="
-                      px-3 py-1 text-sm font-medium
+                      px-3 py-1 text-xs sm:text-sm font-medium
                       backdrop-blur-sm
                       focus:outline-none
                       focus:ring-2
