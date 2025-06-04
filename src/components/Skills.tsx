@@ -8,7 +8,7 @@ export default function Skills() {
     {
       category: "Language",
       description:
-        "JavaScript, Java, TypeScript, and Python — the core pillars to build efficient, modern software.",
+        "Systems of rules and syntax for writing instructions computers can execute.",
       skills: [
         { name: "JavaScript", level: 95 },
         { name: "Java", level: 60 },
@@ -19,7 +19,7 @@ export default function Skills() {
     {
       category: "Front-End",
       description:
-        "Libraries and frameworks for building dynamic user interfaces and experiences.",
+        "Tools and technologies for creating interfaces users interact with directly.",
       skills: [
         { name: "React", level: 90 },
         { name: "Next.js", level: 85 },
@@ -29,7 +29,7 @@ export default function Skills() {
     {
       category: "Styling Libraries",
       description:
-        "Tools to design elegant, responsive interfaces without hassle.",
+        "Libraries for defining the look and layout of user interfaces.",
       skills: [
         { name: "Tailwind CSS", level: 85 },
         { name: "Material UI", level: 75 },
@@ -62,15 +62,14 @@ export default function Skills() {
   const { category, description, skills } = skillCategories[currentIndex];
 
   useEffect(() => {
-  setAnimatedLevels(new Array(skills.length).fill(0));
-  const timeout = setTimeout(() => {
-    setAnimatedLevels(skills.map((s) => s.level));
-  }, 100);
+    setAnimatedLevels(new Array(skills.length).fill(0));
+    const timeout = setTimeout(() => {
+      setAnimatedLevels(skills.map((s) => s.level));
+    }, 100);
 
-  return () => clearTimeout(timeout);
-// eslint-disable-next-line react-hooks/exhaustive-deps
-}, [currentIndex]);
-
+    return () => clearTimeout(timeout);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentIndex]);
 
   return (
     <section

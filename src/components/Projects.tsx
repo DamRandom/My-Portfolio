@@ -88,12 +88,12 @@ export default function Projects() {
                     flex justify-center items-center
                   "
                 >
-                  <div className="absolute left-0 right-0 bg-[#0C1212] flex justify-center items-center">
+                  <div className="absolute  left-0 right-0 h-[110px] bg-[#0C1212] flex justify-center items-center">
                     <Image
                       src="/images/projects/rose-reverie-logo.png"
                       alt="Logo"
                       width={120}
-                      height={40}
+                      height={140}
                       priority
                     />
                   </div>
@@ -117,7 +117,7 @@ export default function Projects() {
                     flex justify-center items-center
                   "
                 >
-                  <div className="absolute left-0 right-0 bg-[#101828] flex justify-center items-center">
+                  <div className="absolute left-0 right-0 h-[110px] bg-[#101828] flex justify-center items-center">
                     <Image
                       src="/images/projects/powerhaus-logo.png"
                       alt="PowerHaus Logo"
@@ -146,7 +146,7 @@ export default function Projects() {
                     flex justify-center items-center
                   "
                 >
-                  <div className="absolute left-0 right-0 bg-[#F4F5F7] shadow-lg flex justify-center items-center">
+                  <div className="absolute left-0 right-0 h-[110px] bg-[#F4F5F7] shadow-lg flex justify-center items-center">
                     <Image
                       src="/images/projects/lithub-logo.png"
                       alt="Lithub Logo"
