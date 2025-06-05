@@ -74,20 +74,20 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="w-full p-12 bg-[#f0eded] text-[#06061B]"
+      className="w-full px-4 sm:px-6 md:px-12 py-12 bg-[#f0eded] text-[#06061B]"
       style={{
         boxShadow: `
-          0 8px 15px rgba(6, 6, 27, 0.15),
-          0 4px 6px rgba(6, 6, 27, 0.1),
-          0 1px 3px rgba(6, 6, 27, 0.07)
-        `,
+        0 8px 15px rgba(6, 6, 27, 0.15),
+        0 4px 6px rgba(6, 6, 27, 0.1),
+        0 1px 3px rgba(6, 6, 27, 0.07)
+      `,
       }}
     >
-      <h2 className="text-4xl font-lora font-semibold mb-6 border-b border-[#06061B] mx-20 text-right">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-lora font-semibold mb-6 border-b border-[#06061B] mx-2 sm:mx-6 md:mx-20 text-right">
         Skills & Technologies
       </h2>
 
-      <p className="text-lg font-lora leading-relaxed tracking-wide text-[#06061B] text-justify mx-20 my-6">
+      <p className="text-base sm:text-lg font-lora leading-relaxed tracking-wide text-[#06061B] text-justify mx-2 sm:mx-6 md:mx-20 my-6">
         These are some of the skills, frameworks, and tools I am proficient in
         and comfortable working with. This does not mean I lack knowledge or
         expertise in other areas, but rather that these are the ones I am best
@@ -95,12 +95,12 @@ export default function Skills() {
         open to learning new technologies and tools.
       </p>
 
-      <div className="max-w-6xl mx-auto font-lora bg-white/10 backdrop-blur-[20px] shadow-2xl border border-white/20 p-8 flex flex-col lg:flex-row justify-center items-center gap-10">
-        <div className="lg:w-1/3 order-2 lg:order-1 text-center">
+      <div className="max-w-6xl mx-auto font-lora bg-white/10 backdrop-blur-[20px] shadow-2xl border border-white/20 p-6 sm:p-8 flex flex-col lg:flex-row justify-center items-center gap-10">
+        <div className="w-full lg:w-1/3 order-2 lg:order-1 text-center">
           <AnimatePresence mode="wait">
             <motion.h3
               key={category}
-              className="text-2xl font-semibold mb-2"
+              className="text-xl sm:text-2xl font-semibold mb-2"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 20 }}
@@ -113,7 +113,7 @@ export default function Skills() {
           <AnimatePresence mode="wait">
             <motion.p
               key={description}
-              className="text-base font-light"
+              className="text-sm sm:text-base font-light"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
@@ -151,14 +151,14 @@ export default function Skills() {
                   duration: 0.3,
                 }}
                 className={`px-3 py-1 text-sm font-medium
-                  backdrop-blur-sm
-                  focus:outline-none
-                  focus:ring-2
-                  focus:ring-[#06061B]
-                  focus:ring-offset-1
-                  rounded-none
-                  border border-transparent
-                `}
+                backdrop-blur-sm
+                focus:outline-none
+                focus:ring-2
+                focus:ring-[#06061B]
+                focus:ring-offset-1
+                rounded-none
+                border border-transparent
+              `}
               >
                 {cat.category}
               </motion.button>
@@ -167,7 +167,7 @@ export default function Skills() {
         </div>
 
         <div
-          className="lg:w-2/3 order-1 lg:order-2 w-full max-w-md"
+          className="w-full max-w-full sm:max-w-md lg:w-2/3 order-1 lg:order-2"
           style={{ minHeight: "280px" }}
         >
           {skills.map(({ name }, idx) => (
@@ -199,3 +199,4 @@ export default function Skills() {
     </section>
   );
 }
+  
