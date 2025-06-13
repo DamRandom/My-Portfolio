@@ -78,7 +78,7 @@ export default function ContactSection() {
               />
             </a>
             <a
-              href="https://www.linkedin.com/in/damian-brito-5437a2214"
+              href="https://www.linkedin.com/in/damian-brito"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
