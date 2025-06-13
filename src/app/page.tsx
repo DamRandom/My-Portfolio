@@ -5,6 +5,8 @@ import Hero from '../components/Hero'
 import Skills from '../components/Skills'  
 import ProjectSection from '@/components/Projects'
 import ContactSection from '@/components/ContactMe'
+import DownloadButton from '@/components/ui/DownloadButton'
+
 
 export default function Home() {
   const [offsetY, setOffsetY] = useState(0)
@@ -43,6 +45,7 @@ export default function Home() {
   <Skills />
   <ProjectSection/>
   <ContactSection />
+  <DownloadButton />
 </div>
 
     </>
