@@ -44,11 +44,14 @@ export default function AboutMe() {
             text-[#06061B] text-justify
           "
         >
-          My name is Damian Brito, a 23-year-old Computer Science Engineer,
-          shaped by four intense years at the University of Information Sciences
-          (UCI) in Havana, Cuba. Throughout my academic journey, I immersed
-          myself in projects that refined not only my technical abilities but
-          also my dedication to creating practical and elegant solutions.
+          My name is Damian Brito, a 24-year-old Computer Science Engineer
+          currently based in Lima, Peru. I was shaped by four intense years at
+          the University of Information Sciences (UCI) in Havana, Cuba.
+          Throughout my academic journey, I immersed myself in projects that
+          refined not only my technical abilities but also my dedication to
+          creating practical and elegant solutions.
+          <br />
+          <br />
           Outside the code, I’m a gamer and a music lover who values calm, quiet
           afternoons—probably the only developer you’ll meet who doesn’t drink
           coffee.

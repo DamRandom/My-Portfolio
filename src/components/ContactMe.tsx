@@ -54,8 +54,8 @@ export default function ContactSection() {
               </a>
             </li>
             <li className="text-xl sm:text-2xl font-extrabold leading-snug">
-              <a href="tel:+5359376583" className="hover:underline">
-                +53 59376583
+              <a href="tel:+51944784437" className="hover:underline">
+                +51 944784437
               </a>
             </li>
           </ul>
@@ -122,6 +122,21 @@ export default function ContactSection() {
                 priority
               />
             </a>
+            <a
+              href="https://web.facebook.com/profile.php?id=61577963415293"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="hover:opacity-70 transition-opacity"
+            >
+              <Image
+                src="/images/logos/facebook.png"
+                alt="Facebook"
+                width={28}
+                height={28}
+                priority
+              />
+            </a>
           </div>
         </div>
       </div>
@@ -129,7 +144,7 @@ export default function ContactSection() {
       {/* Copyright aligned right outside the card */}
       <div className="mt-4 w-full flex justify-center">
         <div className="text-sm text-[#06061B]/70 font-lora max-w-[280px] text-center md:text-right">
-          © {new Date().getFullYear()} Damian Brito. All rights reserved.
+          © 2025 Damian Brito. All rights reserved.
         </div>
       </div>
     </section>
