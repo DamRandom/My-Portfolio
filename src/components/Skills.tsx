@@ -6,9 +6,9 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Skills() {
   const skillCategories = [
     {
-      category: "Language",
+      category: "Lenguajes",
       description:
-        "Systems of rules and syntax for writing instructions computers can execute.",
+        "Sistemas de reglas y sintaxis para escribir instrucciones que las computadoras pueden ejecutar.",
       skills: [
         { name: "JavaScript", level: 95 },
         { name: "Java", level: 60 },
@@ -19,7 +19,7 @@ export default function Skills() {
     {
       category: "Front-End",
       description:
-        "Tools and technologies for creating interfaces users interact with directly.",
+        "Herramientas y tecnologías para crear interfaces con las que los usuarios interactúan directamente.",
       skills: [
         { name: "React", level: 90 },
         { name: "Next.js", level: 85 },
@@ -27,9 +27,9 @@ export default function Skills() {
       ],
     },
     {
-      category: "Styling Libraries",
+      category: "Librerías de Estilos",
       description:
-        "Libraries for defining the look and layout of user interfaces.",
+        "Librerías para definir la apariencia y disposición de las interfaces de usuario.",
       skills: [
         { name: "Tailwind CSS", level: 85 },
         { name: "Material UI", level: 75 },
@@ -39,15 +39,17 @@ export default function Skills() {
     },
     {
       category: "Backend",
-      description: "Technologies for server logic and data management.",
+      description:
+        "Tecnologías para la lógica del servidor y la gestión de datos.",
       skills: [
         { name: "Node.js", level: 80 },
         { name: "Django", level: 55 },
       ],
     },
     {
-      category: "Databases",
-      description: "Systems for storing and querying information efficiently.",
+      category: "Bases de Datos",
+      description:
+        "Sistemas para almacenar y consultar información de manera eficiente.",
       skills: [
         { name: "MySQL", level: 60 },
         { name: "PostgreSQL", level: 65 },
@@ -84,15 +86,15 @@ export default function Skills() {
       }}
     >
       <h2 className="text-2xl sm:text-3xl md:text-4xl font-lora font-semibold mb-6 border-b border-[#06061B] mx-2 sm:mx-6 md:mx-20 text-right">
-        Skills & Technologies
+        Habilidades y Tecnologías
       </h2>
 
       <p className="text-base sm:text-lg font-lora leading-relaxed tracking-wide text-[#06061B] text-justify mx-2 sm:mx-6 md:mx-20 my-6">
-        These are some of the skills, frameworks, and tools I am proficient in
-        and comfortable working with. This does not mean I lack knowledge or
-        expertise in other areas, but rather that these are the ones I am best
-        prepared to deliver high-quality results with. That said, I am always
-        open to learning new technologies and tools.
+        Estas son algunas de las habilidades, frameworks y herramientas en las
+        que tengo mayor dominio y con las que me siento cómodo trabajando. Esto
+        no significa que carezca de conocimientos en otras áreas, sino que son
+        las que mejor manejo para entregar resultados de alta calidad. Dicho
+        esto, siempre estoy abierto a aprender nuevas tecnologías y herramientas.
       </p>
 
       <div className="max-w-6xl mx-auto font-lora bg-white/10 backdrop-blur-[20px] shadow-2xl border border-white/20 p-6 sm:p-8 flex flex-col lg:flex-row justify-center items-center gap-10">
@@ -150,15 +152,7 @@ export default function Skills() {
                   damping: 20,
                   duration: 0.3,
                 }}
-                className={`px-3 py-1 text-sm font-medium
-                backdrop-blur-sm
-                focus:outline-none
-                focus:ring-2
-                focus:ring-[#06061B]
-                focus:ring-offset-1
-                rounded-none
-                border border-transparent
-              `}
+                className="px-3 py-1 text-sm font-medium backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[#06061B] focus:ring-offset-1 rounded-none border border-transparent"
               >
                 {cat.category}
               </motion.button>
@@ -199,4 +193,3 @@ export default function Skills() {
     </section>
   );
 }
-  

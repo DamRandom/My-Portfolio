@@ -1,10 +1,10 @@
 'use client';
 import { motion } from 'framer-motion';
 
-export default function AboutMe() {
+export default function SobreMi() {
   return (
     <section
-      id="about"
+      id="sobre-mi"
       className="relative w-full py-16 px-6 sm:py-20 sm:px-8 md:px-12 lg:px-16 xl:px-24 flex justify-center"
       style={{ fontFamily: "'Playfair Display', serif" }}
     >
@@ -31,7 +31,7 @@ export default function AboutMe() {
             text-center sm:text-right
           "
         >
-          About Me
+          Sobre mí
         </motion.h2>
 
         <motion.p
@@ -44,29 +44,28 @@ export default function AboutMe() {
             text-[#06061B] text-justify
           "
         >
-          My name is Damian Brito, a 24-year-old Computer Science Engineer
-          currently based in Lima, Peru. I was shaped by four intense years at
-          the University of Information Sciences (UCI) in Havana, Cuba.
-          Throughout my academic journey, I immersed myself in projects that
-          refined not only my technical abilities but also my dedication to
-          creating practical and elegant solutions.
+          Mi nombre es Damian Brito, Ingeniero en Sistemas de 24 años,
+          actualmente radicado en Lima, Perú. Mi formación se forjó durante cuatro
+          intensos años en la Universidad de las Ciencias Informáticas (UCI) en
+          La Habana, Cuba. A lo largo de mi trayectoria académica, me involucré en
+          proyectos que no solo perfeccionaron mis habilidades técnicas, sino también
+          mi dedicación a crear soluciones prácticas y elegantes.
           <br />
           <br />
-          Outside the code, I’m a gamer and a music lover who values calm, quiet
-          afternoons—probably the only developer you’ll meet who doesn’t drink
-          coffee.
+          Fuera del código, soy gamer y amante de la música. Valoro las tardes
+          tranquilas y silenciosas—probablemente el único desarrollador que
+          conocerás que no toma café.
           <br />
           <br />
-          I approach development with precision and intention, focusing on
-          quality over quantity. Designing solutions that are both functional
-          and sophisticated drives me, and programming is my craft to bring
-          these ideas to life. I don’t chase trends; I build with purpose,
-          ensuring each project reflects professionalism and thoughtful
-          execution.
+          Enfrento el desarrollo con precisión e intención, priorizando la calidad
+          sobre la cantidad. Me motiva diseñar soluciones que sean funcionales y
+          sofisticadas, y la programación es mi herramienta para dar vida a esas
+          ideas. No persigo tendencias; construyo con propósito, asegurando que cada
+          proyecto refleje profesionalismo y ejecución consciente.
           <br />
           <br />
-          This portfolio is a reflection of that mindset—clean, refined, and
-          purposeful, just like the work I deliver.
+          Este portafolio es un reflejo de esa mentalidad: limpio, refinado y con
+          propósito, tal como el trabajo que entrego.
         </motion.p>
       </div>
     </section>
