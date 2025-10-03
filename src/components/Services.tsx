@@ -1,43 +1,24 @@
 // components/Services.tsx
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
-type Option = {
-  id: string;
-  label: string;
-  price: number;
+const PRICES = {
+  diseño: 600,
+  implementacion: 800,
+  logo: 250,
+  hosting1m: 75,
+  hosting1y: 630,
+  deploy: 100,
+  mantenimiento1m: 150,
+  mantenimiento1y: 1260,
 };
-
-const PRICES: Record<string, number> = {
-  diseño: 300,
-  implementacion: 500,
-  logo: 100,
-  hosting1y: 300,
-  deploy: 200,
-  mantenimiento1y: 500,
-};
-
-const CUSTOM_OPTIONS: Option[] = [
-  { id: "diseño", label: "Diseño responsivo", price: PRICES.diseño },
-  {
-    id: "implementacion",
-    label: "Implementación Front",
-    price: PRICES.implementacion,
-  },
-  { id: "logo", label: "Logo básico", price: PRICES.logo },
-  { id: "hosting1y", label: "Hosting (1 año)", price: PRICES.hosting1y },
-  { id: "deploy", label: "Deploy y optimización", price: PRICES.deploy },
-  {
-    id: "mantenimiento1y",
-    label: "Mantenimiento (1 año)",
-    price: PRICES.mantenimiento1y,
-  },
-];
 
 const PAQUETE_ESENCIAL = PRICES.diseño + PRICES.implementacion + PRICES.logo;
-const PAQUETE_PROFESIONAL = PAQUETE_ESENCIAL + PRICES.hosting1y + PRICES.deploy;
+const PAQUETE_PROFESIONAL =
+  PAQUETE_ESENCIAL + PRICES.hosting1m + PRICES.deploy;
+const PAQUETE_PROFESIONAL_ANUAL =
+  PAQUETE_ESENCIAL + PRICES.hosting1y + PRICES.deploy;
 
 const money = (n: number) =>
   new Intl.NumberFormat("es-PE", {
@@ -47,97 +28,27 @@ const money = (n: number) =>
   }).format(n);
 
 export default function Services() {
-  const [selectedCustom, setSelectedCustom] = useState<Record<string, boolean>>(
-    () =>
-      CUSTOM_OPTIONS.reduce((acc, opt) => {
-        acc[opt.id] = true;
-        return acc;
-      }, {} as Record<string, boolean>)
-  );
-
-  const [activeCard, setActiveCard] = useState<
-    "esencial" | "profesional" | "personalizado"
-  >("esencial");
-
-  const [popups, setPopups] = useState<{ id: number; amount: number }[]>([]);
-  const popupLifetime = 900;
-
-  const prevTotalRef = useRef<number>(
-    CUSTOM_OPTIONS.reduce((sum, o) => sum + o.price, 0)
-  );
-
-  const customTotal = useMemo(
-    () =>
-      CUSTOM_OPTIONS.reduce(
-        (sum, opt) => (selectedCustom[opt.id] ? sum + opt.price : sum),
-        0
-      ),
-    [selectedCustom]
-  );
-
-  const addPopup = (amount: number) => {
-    const id = Date.now() + Math.floor(Math.random() * 1000);
-    setPopups((p) => [...p, { id, amount }]);
-    setTimeout(() => {
-      setPopups((p) => p.filter((x) => x.id !== id));
-    }, popupLifetime);
-  };
-
-  const toggleOption = (id: string) => {
-    const newSelected = { ...selectedCustom, [id]: !selectedCustom[id] };
-    const newTotal = CUSTOM_OPTIONS.reduce(
-      (sum, opt) => (newSelected[opt.id] ? sum + opt.price : sum),
-      0
-    );
-    const diff = newTotal - prevTotalRef.current;
-
-    setSelectedCustom(newSelected);
-    setActiveCard("personalizado");
-
-    if (diff !== 0) {
-      prevTotalRef.current = newTotal;
-      addPopup(diff);
-    } else {
-      prevTotalRef.current = newTotal;
-    }
-  };
-
-  const handleContratar = (
-    type: "esencial" | "profesional" | "personalizado"
-  ) => {
-    const destinatario = "britohdamian@gmail.com";
-    let asunto = "";
-    let cuerpo = "";
+  const handleContratar = (type: "esencial" | "profesional" | "profesional1y") => {
+    const telefono = "51944784437";
+    let mensaje = "";
 
     if (type === "esencial") {
-      asunto = "Solicitud - Paquete Esencial";
-      cuerpo = `Hola, estoy interesado en el Paquete Esencial. Precio: ${money(
+      mensaje = `Hola Damian, me interesa el Paquete Esencial (1 mes). Precio: ${money(
         PAQUETE_ESENCIAL
-      )}.`;
+      )}`;
     } else if (type === "profesional") {
-      asunto = "Solicitud - Paquete Profesional";
-      cuerpo = `Hola, estoy interesado en el Paquete Profesional. Precio: ${money(
+      mensaje = `Hola Damian, me interesa el Paquete Profesional (1 mes). Precio: ${money(
         PAQUETE_PROFESIONAL
-      )}.`;
+      )}`;
     } else {
-      const seleccionadas = CUSTOM_OPTIONS.filter((o) => selectedCustom[o.id]);
-      asunto = "Solicitud - Paquete Personalizado";
-      cuerpo =
-        seleccionadas.length > 0
-          ? `Hola, quiero un Paquete Personalizado con:\n${seleccionadas
-              .map((s) => `- ${s.label} — ${money(s.price)}`)
-              .join("\n")}\n\nTotal estimado: ${money(customTotal)}.`
-          : `Hola, quiero información sobre un paquete personalizado.`;
+      mensaje = `Hola Damian, me interesa el Paquete Profesional (1 año). Precio: ${money(
+        PAQUETE_PROFESIONAL_ANUAL
+      )}`;
     }
 
-    window.location.href = `mailto:${destinatario}?subject=${encodeURIComponent(
-      asunto
-    )}&body=${encodeURIComponent(cuerpo)}`;
+    const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, "_blank");
   };
-
-  useEffect(() => {
-    prevTotalRef.current = customTotal;
-  }, []);
 
   return (
     <section
@@ -150,8 +61,8 @@ export default function Services() {
           Elige tu Paquete <span className="text-[#101031]">Ideal</span>
         </h2>
         <p className="text-base md:text-lg text-[#06061B]/80 max-w-2xl mx-auto leading-relaxed">
-          Tres opciones claras: paquete básico, paquete avanzado con publicación
-          y hosting, o arma tu propio plan.
+          Opciones claras: básico mensual, avanzado mensual o profesional anual
+          con descuento.
         </p>
       </div>
 
@@ -160,18 +71,16 @@ export default function Services() {
         {/* Esencial */}
         <motion.div
           whileHover={{ scale: 1.005 }}
-          className={`flex flex-col h-full p-6 bg-white/90 border border-gray-200 shadow-sm rounded-none transition ${
-            activeCard === "esencial" ? "bg-white/95" : ""
-          }`}
+          className="flex flex-col h-full p-6 bg-white/90 border border-gray-200 shadow-sm rounded-none transition"
         >
-          <h3 className="text-lg font-semibold mb-3">Esencial</h3>
+          <h3 className="text-lg font-semibold mb-3">Esencial (1 mes)</h3>
           <p className="text-sm text-[#06061B]/80 mb-4">
             Paquete básico — lo necesario para arrancar rápido.
           </p>
           <ul className="text-sm space-y-1 mb-6">
-            <li className="px-2"> Diseño responsivo</li>
-            <li className="px-2"> Implementación Front</li>
-            <li className="px-2"> Logo básico</li>
+            <li className="px-2">Diseño responsivo</li>
+            <li className="px-2">Implementación Front</li>
+            <li className="px-2">Logo básico</li>
           </ul>
           <div className="flex justify-between items-center mt-auto">
             <div>
@@ -187,12 +96,10 @@ export default function Services() {
           </div>
         </motion.div>
 
-        {/* Profesional */}
+        {/* Profesional mensual */}
         <motion.div
           whileHover={{ scale: 1.005 }}
-          className={`relative flex flex-col h-full p-6 bg-white/90 border border-gray-200 shadow-sm rounded-none transition ${
-            activeCard === "profesional" ? "bg-white/95" : ""
-          }`}
+          className="relative flex flex-col h-full p-6 bg-white/90 border border-gray-200 shadow-sm rounded-none transition"
         >
           <div
             className="absolute -top-3 right-3 px-3 py-1 text-xs font-semibold text-white"
@@ -200,17 +107,16 @@ export default function Services() {
           >
             Más solicitado
           </div>
-          <h3 className="text-lg font-semibold mb-3">Profesional</h3>
+          <h3 className="text-lg font-semibold mb-3">Profesional (1 mes)</h3>
           <p className="text-sm text-[#06061B]/80 mb-4">
-            Paquete avanzado — incluye todo lo necesario más publicación y
-            hosting por 1 año.
+            Paquete avanzado — incluye publicación y hosting mensual.
           </p>
           <ul className="text-sm space-y-1 mb-6">
-            <li className="px-2"> Diseño responsivo</li>
-            <li className="px-2"> Implementación Front</li>
-            <li className="px-2"> Logo básico</li>
-            <li className="px-2"> Hosting (1 año)</li>
-            <li className="px-2"> Deploy optimizado</li>
+            <li className="px-2">Diseño responsivo</li>
+            <li className="px-2">Implementación Front</li>
+            <li className="px-2">Logo básico</li>
+            <li className="px-2">Hosting (1 mes)</li>
+            <li className="px-2">Deploy optimizado</li>
           </ul>
           <div className="flex justify-between items-center mt-auto">
             <div>
@@ -228,71 +134,39 @@ export default function Services() {
           </div>
         </motion.div>
 
-        {/* Personalizado */}
+        {/* Profesional anual */}
         <motion.div
           whileHover={{ scale: 1.005 }}
-          className="flex flex-col h-full p-6 bg-white/90 border border-gray-200 shadow-sm rounded-none transition"
+          className="relative flex flex-col h-full p-6 bg-white/90 border border-gray-200 shadow-sm rounded-none transition"
         >
-          <h3 className="text-lg font-semibold mb-3">Personalizado</h3>
-          <p className="text-sm text-[#06061B]/80 mb-4">
-            Arma tu plan — haz clic para quitar o añadir servicios.
-          </p>
-          <div className="space-y-1 mb-6 max-h-40 overflow-y-auto pr-1">
-            {CUSTOM_OPTIONS.map((opt) => {
-              const active = !!selectedCustom[opt.id];
-              return (
-                <div
-                  key={opt.id}
-                  onClick={() => toggleOption(opt.id)}
-                  className={`flex justify-between items-center text-sm cursor-pointer px-2 transition ${
-                    active
-                      ? "hover:bg-[#101031]/5"
-                      : "line-through text-gray-400 italic"
-                  }`}
-                >
-                  <span>{opt.label}</span>
-                  <span>{money(opt.price)}</span>
-                </div>
-              );
-            })}
+          <div
+            className="absolute -top-3 right-3 px-3 py-1 text-xs font-semibold text-white"
+            style={{ background: "linear-gradient(90deg,#3FAD00,#1C7C00)" }}
+          >
+            Ahorra 30%
           </div>
-          <div className="flex justify-between items-center mt-auto relative">
-            <div className="relative">
-              <div className="text-xs text-[#06061B]/70">Total</div>
-              <motion.div
-                initial={{ scale: 0.99 }}
-                animate={{ scale: 1 }}
-                transition={{ type: "spring", stiffness: 320, damping: 22 }}
-                className="text-xl font-bold relative"
-              >
-                {money(customTotal || 0)}
-
-                <div className="absolute left-1/2 -translate-x-1/2 -top-7 pointer-events-none">
-                  <AnimatePresence mode="popLayout">
-                    {popups.map((p) => (
-                      <motion.span
-                        key={p.id}
-                        initial={{ opacity: 1, y: 0 }}
-                        animate={{ opacity: 0, y: -26 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.85, ease: "easeOut" }}
-                        className="block text-xs font-semibold text-[#060629] whitespace-nowrap"
-                      >
-                        {p.amount > 0 ? `+${money(p.amount)}` : money(p.amount)}
-                      </motion.span>
-                    ))}
-                  </AnimatePresence>
-                </div>
-              </motion.div>
+          <h3 className="text-lg font-semibold mb-3">Profesional (1 año)</h3>
+          <p className="text-sm text-[#06061B]/80 mb-4">
+            Mismas características del plan Profesional pero con hosting anual a
+            precio reducido.
+          </p>
+          <ul className="text-sm space-y-1 mb-6">
+            <li className="px-2">Diseño responsivo</li>
+            <li className="px-2">Implementación Front</li>
+            <li className="px-2">Logo básico</li>
+            <li className="px-2">Hosting (1 año)</li>
+            <li className="px-2">Deploy optimizado</li>
+          </ul>
+          <div className="flex justify-between items-center mt-auto">
+            <div>
+              <div className="text-xs text-[#06061B]/70">Precio</div>
+              <div className="text-xl font-bold">
+                {money(PAQUETE_PROFESIONAL_ANUAL)}
+              </div>
             </div>
             <button
-              onClick={() => handleContratar("personalizado")}
-              className={`px-4 py-2 ${
-                customTotal === 0
-                  ? "bg-gray-400 cursor-not-allowed"
-                  : "bg-[#060629] hover:bg-[#101031]"
-              } text-white text-sm font-medium rounded-none transition`}
-              disabled={customTotal === 0}
+              onClick={() => handleContratar("profesional1y")}
+              className="px-4 py-2 bg-[#060629] text-white text-sm font-medium hover:bg-[#101031] rounded-none transition"
             >
               Contratar
             </button>
