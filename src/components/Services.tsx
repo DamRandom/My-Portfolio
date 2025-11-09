@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import DevServices from "./services/Dev";
 import BusinessCardServices from "./services/BusinessCard";
 import LogoDesignServices from "./services/LogoDesign";
+import PosterDesignServices from "./services/PosterDesign";
 
 export default function Services() {
   const [activeCategory, setActiveCategory] = useState("dev");
@@ -34,7 +35,7 @@ export default function Services() {
         </h2>
       </div>
 
-      {/* Etiquetas fijas */}
+      {/* Categorías */}
       <div className="w-full flex flex-wrap justify-center gap-3 mb-8">
         {categories.map((cat) => (
           <motion.button
@@ -58,7 +59,7 @@ export default function Services() {
               stiffness: 220,
               damping: 24,
             }}
-            className="px-4 py-1.5 text-sm font-lora text-[#06061B] rounded-md border border-transparent select-none"
+            className="px-4 py-1.5 text-sm font-lora text-[#06061B] border border-transparent select-none"
           >
             {cat.label}
           </motion.button>
@@ -79,19 +80,8 @@ export default function Services() {
           >
             {activeCategory === "dev" && <DevServices />}
             {activeCategory === "cards" && <BusinessCardServices />}
+            {activeCategory === "posters" && <PosterDesignServices />}
             {activeCategory === "logos" && <LogoDesignServices />}
-
-            {activeCategory === "posters" && (
-              <div className="p-8 bg-[#FAFAFA] rounded-2xl shadow-md text-center">
-                <h3 className="text-lg font-semibold mb-3">
-                  Posters Publicitarios – Desde S/40
-                </h3>
-                <p className="text-sm text-[#06061B]/80 leading-relaxed">
-                  Diseños visuales y atractivos para redes o impresión. Incluye
-                  2 propuestas, revisiones y entrega en formato optimizado.
-                </p>
-              </div>
-            )}
 
             <p className="text-xs text-[#06061B]/70 text-center mt-4 italic">
               *Precios y servicios ajustables según requerimientos.
