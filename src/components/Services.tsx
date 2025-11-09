@@ -1,182 +1,113 @@
-// components/Services.tsx
 "use client";
 
-import { motion } from "framer-motion";
-
-const PRICES = {
-  diseño: 600,
-  implementacion: 800,
-  logo: 250,
-  hosting1m: 75,
-  hosting1y: 630,
-  deploy: 100,
-  mantenimiento1m: 150,
-  mantenimiento1y: 1260,
-};
-
-const PAQUETE_ESENCIAL = PRICES.diseño + PRICES.implementacion + PRICES.logo;
-const PAQUETE_PROFESIONAL =
-  PAQUETE_ESENCIAL + PRICES.hosting1m + PRICES.deploy;
-const PAQUETE_PROFESIONAL_ANUAL =
-  PAQUETE_ESENCIAL + PRICES.hosting1y + PRICES.deploy;
-
-const money = (n: number) =>
-  new Intl.NumberFormat("es-PE", {
-    style: "currency",
-    currency: "PEN",
-    maximumFractionDigits: 0,
-  }).format(n);
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import DevServices from "./services/Dev";
+import BusinessCardServices from "./services/BusinessCard";
 
 export default function Services() {
-  const handleContratar = (type: "esencial" | "profesional" | "profesional1y") => {
-    const telefono = "51944784437";
-    let mensaje = "";
+  const [activeCategory, setActiveCategory] = useState("dev");
 
-    if (type === "esencial") {
-      mensaje = `Hola Damian, me interesa el Paquete Esencial (1 mes). Precio: ${money(
-        PAQUETE_ESENCIAL
-      )}`;
-    } else if (type === "profesional") {
-      mensaje = `Hola Damian, me interesa el Paquete Profesional (1 mes). Precio: ${money(
-        PAQUETE_PROFESIONAL
-      )}`;
-    } else {
-      mensaje = `Hola Damian, me interesa el Paquete Profesional (1 año). Precio: ${money(
-        PAQUETE_PROFESIONAL_ANUAL
-      )}`;
-    }
+  const categories = [
+    { key: "dev", label: "Desarrollo Web" },
+    { key: "cards", label: "Tarjetas de Presentación" },
+    { key: "posters", label: "Posters Publicitarios" },
+    { key: "logos", label: "Diseño de Logos" },
+  ];
 
-    const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
-    window.open(url, "_blank");
+  const variants = {
+    enter: { opacity: 0, y: 15 },
+    center: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -15 },
   };
 
   return (
     <section
       id="services"
-      className="w-full px-6 sm:px-10 md:px-20 py-16 bg-[#f0eded] text-[#06061B]"
+      className="relative w-full min-h-screen px-6 sm:px-10 md:px-20 pt-16 pb-40 bg-[#F5F5F5] text-[#06061B] flex flex-col justify-between overflow-hidden"
     >
-      {/* Intro */}
+      {/* Título */}
       <div className="text-center mb-12">
-        <h2 className="text-3xl sm:text-4xl font-lora font-semibold mb-6 border-b border-[#06061B] mx-0 sm:mx-20 text-center sm:text-right">
-          Elige tu Paquete <span className="text-[#101031]">Ideal</span>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-lora font-semibold mb-6 border-b border-[#06061B] mx-2 sm:mx-6 md:mx-20 text-right">
+          Mis Servicios
         </h2>
-        <p className="text-base md:text-lg text-[#06061B]/80 max-w-2xl mx-auto leading-relaxed">
-          Opciones claras: básico mensual, avanzado mensual o profesional anual
-          con descuento.
-        </p>
       </div>
 
-      {/* Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto font-lora items-stretch">
-        {/* Esencial */}
-        <motion.div
-          whileHover={{ scale: 1.005 }}
-          className="flex flex-col h-full p-6 bg-white/90 border border-gray-200 shadow-sm rounded-none transition"
-        >
-          <h3 className="text-lg font-semibold mb-3">Esencial (1 mes)</h3>
-          <p className="text-sm text-[#06061B]/80 mb-4">
-            Paquete básico — lo necesario para arrancar rápido.
-          </p>
-          <ul className="text-sm space-y-1 mb-6">
-            <li className="px-2">Diseño responsivo</li>
-            <li className="px-2">Implementación Front</li>
-            <li className="px-2">Logo básico</li>
-          </ul>
-          <div className="flex justify-between items-center mt-auto">
-            <div>
-              <div className="text-xs text-[#06061B]/70">Precio</div>
-              <div className="text-xl font-bold">{money(PAQUETE_ESENCIAL)}</div>
-            </div>
-            <button
-              onClick={() => handleContratar("esencial")}
-              className="px-4 py-2 bg-[#060629] text-white text-sm font-medium hover:bg-[#101031] rounded-none transition"
-            >
-              Contratar
-            </button>
-          </div>
-        </motion.div>
-
-        {/* Profesional mensual */}
-        <motion.div
-          whileHover={{ scale: 1.005 }}
-          className="relative flex flex-col h-full p-6 bg-white/90 border border-gray-200 shadow-sm rounded-none transition"
-        >
-          <div
-            className="absolute -top-3 right-3 px-3 py-1 text-xs font-semibold text-white"
-            style={{ background: "linear-gradient(90deg,#FF7A18,#FF3D00)" }}
+      {/* Etiquetas fijas */}
+      <div className="w-full flex flex-wrap justify-center gap-3 mb-8">
+        {categories.map((cat) => (
+          <motion.button
+            key={cat.key}
+            onClick={() => setActiveCategory(cat.key)}
+            whileHover={{
+              scale: 0.96,
+              backgroundColor:
+                activeCategory === cat.key ? "#E4E4E4" : "#F7F7F7",
+            }}
+            animate={{
+              backgroundColor:
+                activeCategory === cat.key ? "#E9E9E9" : "#FFFFFF",
+              boxShadow:
+                activeCategory === cat.key
+                  ? "0 3px 6px rgba(6,6,41,0.25)"
+                  : "0 3px 6px rgba(6,6,41,0.1)",
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 220,
+              damping: 24,
+            }}
+            className="px-4 py-1.5 text-sm font-lora text-[#06061B] rounded-md border border-transparent select-none"
           >
-            Más solicitado
-          </div>
-          <h3 className="text-lg font-semibold mb-3">Profesional (1 mes)</h3>
-          <p className="text-sm text-[#06061B]/80 mb-4">
-            Paquete avanzado — incluye publicación y hosting mensual.
-          </p>
-          <ul className="text-sm space-y-1 mb-6">
-            <li className="px-2">Diseño responsivo</li>
-            <li className="px-2">Implementación Front</li>
-            <li className="px-2">Logo básico</li>
-            <li className="px-2">Hosting (1 mes)</li>
-            <li className="px-2">Deploy optimizado</li>
-          </ul>
-          <div className="flex justify-between items-center mt-auto">
-            <div>
-              <div className="text-xs text-[#06061B]/70">Precio</div>
-              <div className="text-xl font-bold">
-                {money(PAQUETE_PROFESIONAL)}
-              </div>
-            </div>
-            <button
-              onClick={() => handleContratar("profesional")}
-              className="px-4 py-2 bg-[#101031] text-white text-sm font-medium hover:bg-[#060629] rounded-none transition"
-            >
-              Contratar
-            </button>
-          </div>
-        </motion.div>
-
-        {/* Profesional anual */}
-        <motion.div
-          whileHover={{ scale: 1.005 }}
-          className="relative flex flex-col h-full p-6 bg-white/90 border border-gray-200 shadow-sm rounded-none transition"
-        >
-          <div
-            className="absolute -top-3 right-3 px-3 py-1 text-xs font-semibold text-white"
-            style={{ background: "linear-gradient(90deg,#3FAD00,#1C7C00)" }}
-          >
-            Ahorra 30%
-          </div>
-          <h3 className="text-lg font-semibold mb-3">Profesional (1 año)</h3>
-          <p className="text-sm text-[#06061B]/80 mb-4">
-            Mismas características del plan Profesional pero con hosting anual a
-            precio reducido.
-          </p>
-          <ul className="text-sm space-y-1 mb-6">
-            <li className="px-2">Diseño responsivo</li>
-            <li className="px-2">Implementación Front</li>
-            <li className="px-2">Logo básico</li>
-            <li className="px-2">Hosting (1 año)</li>
-            <li className="px-2">Deploy optimizado</li>
-          </ul>
-          <div className="flex justify-between items-center mt-auto">
-            <div>
-              <div className="text-xs text-[#06061B]/70">Precio</div>
-              <div className="text-xl font-bold">
-                {money(PAQUETE_PROFESIONAL_ANUAL)}
-              </div>
-            </div>
-            <button
-              onClick={() => handleContratar("profesional1y")}
-              className="px-4 py-2 bg-[#060629] text-white text-sm font-medium hover:bg-[#101031] rounded-none transition"
-            >
-              Contratar
-            </button>
-          </div>
-        </motion.div>
+            {cat.label}
+          </motion.button>
+        ))}
       </div>
 
-      <div className="text-xs text-[#06061B]/70 text-center mt-8">
-        *Precios aproximados. El monto final se acuerda según alcance y
-        requerimientos.
+      {/* Contenido dinámico */}
+      <div className="flex-1 flex flex-col items-center justify-start">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeCategory}
+            variants={variants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className="w-full"
+          >
+            {activeCategory === "dev" && <DevServices />}
+            {activeCategory === "cards" && <BusinessCardServices />}
+
+            {activeCategory === "posters" && (
+              <div className="p-8 bg-[#FAFAFA] rounded-2xl shadow-md text-center">
+                <h3 className="text-lg font-semibold mb-3">
+                  Posters Publicitarios – Desde S/40
+                </h3>
+                <p className="text-sm text-[#06061B]/80 leading-relaxed">
+                  Diseños visuales y atractivos para redes o impresión. Incluye
+                  2 propuestas, revisiones y entrega en formato optimizado.
+                </p>
+              </div>
+            )}
+
+            {activeCategory === "logos" && (
+              <div className="p-8 bg-[#FAFAFA] rounded-2xl shadow-md text-center">
+                <h3 className="text-lg font-semibold mb-3">
+                  Diseño de Logos – Desde S/60
+                </h3>
+                <p className="text-sm text-[#06061B]/80 leading-relaxed">
+                  Creación de identidad visual elegante y personalizada. Incluye
+                  3 propuestas, revisiones y entrega en formatos editables.
+                </p>
+              </div>
+            )}
+
+            <p className="text-xs text-[#06061B]/70 text-center mt-4 italic">
+              *Precios y servicios ajustables según requerimientos.
+            </p>
+          </motion.div>
+        </AnimatePresence>
       </div>
     </section>
   );
