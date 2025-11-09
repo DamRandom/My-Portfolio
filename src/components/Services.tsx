@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import DevServices from "./services/Dev";
 import BusinessCardServices from "./services/BusinessCard";
+import LogoDesignServices from "./services/LogoDesign";
 
 export default function Services() {
   const [activeCategory, setActiveCategory] = useState("dev");
@@ -78,6 +79,7 @@ export default function Services() {
           >
             {activeCategory === "dev" && <DevServices />}
             {activeCategory === "cards" && <BusinessCardServices />}
+            {activeCategory === "logos" && <LogoDesignServices />}
 
             {activeCategory === "posters" && (
               <div className="p-8 bg-[#FAFAFA] rounded-2xl shadow-md text-center">
@@ -87,18 +89,6 @@ export default function Services() {
                 <p className="text-sm text-[#06061B]/80 leading-relaxed">
                   Diseños visuales y atractivos para redes o impresión. Incluye
                   2 propuestas, revisiones y entrega en formato optimizado.
-                </p>
-              </div>
-            )}
-
-            {activeCategory === "logos" && (
-              <div className="p-8 bg-[#FAFAFA] rounded-2xl shadow-md text-center">
-                <h3 className="text-lg font-semibold mb-3">
-                  Diseño de Logos – Desde S/60
-                </h3>
-                <p className="text-sm text-[#06061B]/80 leading-relaxed">
-                  Creación de identidad visual elegante y personalizada. Incluye
-                  3 propuestas, revisiones y entrega en formatos editables.
                 </p>
               </div>
             )}
