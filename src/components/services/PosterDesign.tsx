@@ -2,30 +2,30 @@
 
 import { motion } from "framer-motion";
 
-export default function PosterDesignServices() {
+export default function MarketingPackages() {
   const packages = [
     {
       title: "Básico",
-      price: 39.9,
-      description: "Perfecto para publicaciones o promociones rápidas.",
+      price: 89.9,
+      description: "Ideal para negocios pequeños que recién inician su presencia online.",
       features: [
-        "1 diseño personalizado",
-        "1 revisión",
-        "Entrega JPG lista para redes",
-        "Optimizado para Instagram o Facebook",
+        "Diseño de 3 piezas para redes sociales",
+        "Optimización SEO inicial",
+        "Configuración básica de WhatsApp Business",
+        "Asesoría rápida de marca (30 min)",
       ],
       color: "#060629",
     },
     {
       title: "Profesional",
-      price: 69.9,
-      description: "Diseño adaptable con estilo avanzado y formato doble.",
+      price: 149.9,
+      description: "Perfecto si ya tienes redes activas y buscas un impulso real.",
       features: [
-        "2 propuestas iniciales",
-        "3 revisiones",
-        "Entrega JPG y PDF HD",
-        "Versión redes y impresión",
-        "Mockup incluido",
+        "Diseño de 6 piezas mensuales para redes",
+        "SEO on-page completo (hasta 5 páginas)",
+        "Configuración avanzada de WhatsApp Business",
+        "Revisión de branding y optimización de perfil",
+        "1 reunión de seguimiento mensual",
       ],
       tag: {
         text: "Más solicitado",
@@ -35,16 +35,18 @@ export default function PosterDesignServices() {
     },
     {
       title: "Premium",
-      price: 109.9,
-      description: "Diseño integral con materiales listos y enfoque visual pro.",
+      price: 199.9,
+      description: "Pack integral de marketing con estrategia, diseño y mantenimiento mensual.",
       features: [
-        "3 conceptos y revisiones ilimitadas",
-        "Entrega JPG, PDF y editable (PSD/AI)",
-        "Mockups premium",
-        "Versión redes, impresión y formatos extra",
+        "10 piezas de redes + planificación mensual",
+        "SEO técnico + auditoría completa",
+        "Optimización de marca visual y textual",
+        "Configuración y automatización en WhatsApp Business",
+        "2 reuniones estratégicas mensuales",
+        "Asesoría en anuncios o campañas orgánicas",
       ],
       tag: {
-        text: "Recomendado",
+        text: "Ahorra 25%",
         color: "linear-gradient(90deg,#3FAD00,#1C7C00)",
       },
       color: "#060629",
@@ -65,7 +67,7 @@ export default function PosterDesignServices() {
 
   const handleContact = (pkg: string, price: number) => {
     const telefono = "51944784437";
-    const mensaje = `Hola Damian, me interesa el paquete ${pkg} de Posters Publicitarios. Precio: S/${price.toFixed(
+    const mensaje = `Hola Damian, me interesa el paquete ${pkg} de Marketing Digital. Precio: S/${price.toFixed(
       2
     )}`;
     const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
