@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const PRICES = {
   diseño: 400,
   implementacion: 550,
-  logo: 180,
+  logo: 50,
   hosting1m: 60,
   hosting1y: 480,
   deploy: 80,
