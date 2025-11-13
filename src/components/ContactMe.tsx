@@ -47,7 +47,7 @@ export default function SeccionContacto() {
                 </li>
                 <li className="text-lg sm:text-xl font-extrabold">
                   <a href="tel:+51944784437" className="hover:underline">
-                    +51 944784437
+                    +51 944 784 437
                   </a>
                 </li>
               </ul>
