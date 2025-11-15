@@ -33,6 +33,22 @@ const projects = [
       "Inglés",
     ],
   },
+  {
+    title: "Fravi Insurance Services",
+    image: "/images/projects/fravi-logo.png",
+    description:
+      "LitHub es una plataforma personal de gestión de libros que permite a los usuarios llevar un seguimiento de su progreso de lectura, añadir libros y recibir recomendaciones personalizadas. Desarrollada con Next.js, también incluye un lector de ebooks compatible con PDF y EPUB.",
+    github: "https://github.com/DamRandom/Fravi-Insurance-Services",
+    vercel: "https://fravi-insurance-services.vercel.app/",
+    tags: [
+      "Panel Personal",
+      "Lector de Ebooks",
+      "PDF",
+      "EPUB",
+      "Seguimiento de Lectura",
+      "Inglés",
+    ],
+  },
 ];
 
 export default projects;
