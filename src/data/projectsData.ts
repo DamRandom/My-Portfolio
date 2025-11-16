@@ -40,15 +40,15 @@ const projects = [
   },
   {
     title: "Fravi Insurance Services",
-    image: "/images/projects/fravi-logo.png",
+    image: "/images/projects/fravi.png",
     description:
-      "Sitio profesional para servicios de seguros, con información clara y diseño funcional.",
+     "Plataforma moderna que presenta seguros de auto, hogar y negocio con una interfaz clara y profesional. Incluye un diseño elegante, transiciones fluidas y contenido bilingüe pensado para una experiencia visual sólida y confiable.",
     github: "https://github.com/DamRandom/Fravi-Insurance-Services",
     vercel: "https://fravi-insurance-services.vercel.app/",
     tags: ["Seguros", "Servicios", "UI/UX", "Responsive"],
 
-    overlayColor: "rgba(0,0,0,0.40)", // cámbialo cuando tengas la paleta oficial
-    overlayBackground: "#FFFFFF",
+    overlayColor: "rgba(0,0,0,0.40)",
+    overlayBackground: "#FAFAF8",
     overlayLogo: "/images/projects/fravi-logo.png",
   },
 ];
