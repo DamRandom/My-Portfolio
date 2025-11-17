@@ -7,47 +7,61 @@ import ProjectSection from "@/components/Projects";
 import ContactSection from "@/components/ContactMe";
 import DownloadButton from "@/components/ui/DownloadButton";
 import Services from "@/components/Services";
-// import TestimonialsSection from '@/components/Testimonials'
 
 export default function Home() {
   const [offsetY, setOffsetY] = useState(0);
+  const [bgImage, setBgImage] = useState("/images/profile.jpg");
 
   useEffect(() => {
     const handleScroll = () => setOffsetY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    const mq = window.matchMedia("(orientation: portrait)");
+
+    const setImage = () => {
+      if (mq.matches) {
+        setBgImage("/images/profile-vertical.png");
+      } else {
+        setBgImage("/images/profile.jpg");
+      }
+    };
+
+    setImage();
+    mq.addEventListener("change", setImage);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      mq.removeEventListener("change", setImage);
+    };
   }, []);
 
   return (
     <>
       <div className="relative w-full min-h-screen overflow-hidden">
-        {/* Fondo parallax inverso, con velocidad ajustable */}
         <div
-          className="fixed top-0 left-0 w-full h-full z-0"
+          className="
+            fixed top-0 left-0 w-full h-full z-0
+            bg-no-repeat bg-center
+            bg-[length:200%]
+            md:bg-cover md:bg-center
+          "
           style={{
-            backgroundImage: "url('/images/profile.jpg')",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
+            backgroundImage: `url('${bgImage}')`,
             transform: `translateY(${offsetY * -0.03}px)`,
             willChange: "transform",
           }}
         />
 
-        {/* Contenido scrollable por encima */}
         <div className="relative z-10">
           <Hero />
           <AboutMe />
         </div>
       </div>
 
-      {/* Sección Skills fuera del fondo parallax */}
       <div className="relative z-20">
         <Skills />
-        {/* Aquí presentas lo que ofreces */}
         <Services />
         <ProjectSection />
-        {/* <TestimonialsSection /> */} {/* Aquí muestras feedback real */}
         <ContactSection />
         <DownloadButton />
       </div>

@@ -25,11 +25,11 @@ export default function Projects() {
       </h2>
 
       <p className="text-base sm:text-lg font-lora leading-relaxed tracking-wide text-[#06061B] text-justify mx-0 sm:mx-20 my-6">
-        Aquí tienes algunos de mis proyectos para mostrar mis habilidades en la construcción de sitios web modernos.
+        Aquí tienes algunos de mis proyectos para mostrar mis habilidades en la
+        construcción de sitios web modernos.
       </p>
 
       <div className="relative max-w-6xl mx-auto font-lora bg-white/10 backdrop-blur-[20px] shadow-2xl border border-white/20 p-6 sm:p-8 flex flex-col gap-12 overflow-hidden">
-
         {/* Carrusel */}
         <motion.div
           key={currentIndex}
@@ -86,6 +86,11 @@ export default function Projects() {
                           width={120}
                           height={40}
                           priority
+                          style={{
+                            width: "auto",
+                            height: "auto",
+                            objectFit: "contain",
+                          }}
                         />
                       </div>
                     )}

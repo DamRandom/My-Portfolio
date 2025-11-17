@@ -9,9 +9,9 @@ export default function SeccionContacto() {
       style={{ minHeight: "500px" }}
       aria-label="Sección de contacto"
     >
-      {/* Layout: grid para controlar posición de la foto y la tarjeta */}
       <div className="relative max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 items-center gap-6">
-        {/* Imagen: arriba en móvil, izquierda en escritorio */}
+        
+        {/* Imagen */}
         <div className="col-span-12 md:col-span-5 lg:col-span-4 flex justify-center md:justify-start order-1">
           <div className="relative w-[240px] sm:w-[300px] md:w-[340px] lg:w-[380px] aspect-[2/3]">
             <Image
@@ -24,7 +24,7 @@ export default function SeccionContacto() {
           </div>
         </div>
 
-        {/* Tarjeta de contacto + copyright debajo */}
+        {/* Tarjeta + Copyright */}
         <div className="col-span-12 md:col-span-7 lg:col-span-8 flex justify-center md:justify-end order-2 px-4">
           <div className="w-full max-w-xl">
             <div className="bg-white/10 backdrop-blur-[20px] border border-white/20 shadow-2xl p-6 sm:p-8 font-lora">
@@ -52,6 +52,7 @@ export default function SeccionContacto() {
                 </li>
               </ul>
 
+              {/* Íconos */}
               <div className="flex justify-center md:justify-start gap-6 sm:gap-8">
                 <a
                   href="https://www.instagram.com/dam_random/"
@@ -60,13 +61,7 @@ export default function SeccionContacto() {
                   aria-label="Instagram"
                   className="hover:opacity-70 transition-opacity"
                 >
-                  <Image
-                    src="/images/logos/instagram.png"
-                    alt="Instagram"
-                    width={28}
-                    height={28}
-                    priority
-                  />
+                  <Image src="/images/logos/instagram.png" alt="Instagram" width={28} height={28} priority />
                 </a>
 
                 <a
@@ -76,13 +71,7 @@ export default function SeccionContacto() {
                   aria-label="LinkedIn"
                   className="hover:opacity-70 transition-opacity"
                 >
-                  <Image
-                    src="/images/logos/linkedin.png"
-                    alt="LinkedIn"
-                    width={28}
-                    height={28}
-                    priority
-                  />
+                  <Image src="/images/logos/linkedin.png" alt="LinkedIn" width={28} height={28} priority />
                 </a>
 
                 <a
@@ -92,13 +81,7 @@ export default function SeccionContacto() {
                   aria-label="GitHub"
                   className="hover:opacity-70 transition-opacity"
                 >
-                  <Image
-                    src="/images/logos/github.png"
-                    alt="GitHub"
-                    width={28}
-                    height={28}
-                    priority
-                  />
+                  <Image src="/images/logos/github.png" alt="GitHub" width={28} height={28} priority />
                 </a>
 
                 <a
@@ -108,13 +91,7 @@ export default function SeccionContacto() {
                   aria-label="Telegram"
                   className="hover:opacity-70 transition-opacity"
                 >
-                  <Image
-                    src="/images/logos/telegram.png"
-                    alt="Telegram"
-                    width={28}
-                    height={28}
-                    priority
-                  />
+                  <Image src="/images/logos/telegram.png" alt="Telegram" width={28} height={28} priority />
                 </a>
 
                 <a
@@ -124,18 +101,11 @@ export default function SeccionContacto() {
                   aria-label="Facebook"
                   className="hover:opacity-70 transition-opacity"
                 >
-                  <Image
-                    src="/images/logos/facebook.png"
-                    alt="Facebook"
-                    width={28}
-                    height={28}
-                    priority
-                  />
+                  <Image src="/images/logos/facebook.png" alt="Facebook" width={28} height={28} priority />
                 </a>
               </div>
             </div>
 
-            {/* Derechos de autor centrados debajo de la tarjeta */}
             <div className="mt-4 w-full flex justify-center">
               <div className="text-sm text-[#06061B]/70 font-lora max-w-[280px] text-center">
                 © 2025 Damian Brito. Todos los derechos reservados.

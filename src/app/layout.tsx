@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import { Lora } from "next/font/google";
 import "../styles/globals.css";
 
-const lora = Lora({ subsets: ["latin"], weight: ["400", "700"], variable: "--font-lora" });
+const lora = Lora({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-lora",
+});
 
 export const metadata: Metadata = {
   title: "Software Engineer | Damian Brito",
@@ -20,20 +24,19 @@ export const metadata: Metadata = {
     "freelancer",
     "web developer",
   ],
+
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico" }
+    ],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-      </head>
-      <body
-        className={`
-          ${lora.variable}
-          antialiased
-        `}
-      >
+      <body className={`${lora.variable} antialiased`}>
         {children}
       </body>
     </html>
