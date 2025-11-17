@@ -30,20 +30,23 @@ export default function LogoDesignServices() {
       tag: { text: "Más solicitado", color: "linear-gradient(90deg,#FF7A18,#FF3D00)" },
       color: "#101031",
     },
-    {
-      title: "Premium",
-      price: 149.9,
-      description: "Diseño de marca integral con manual, variantes y mockups profesionales.",
-      features: [
-        "3 propuestas iniciales + revisiones ilimitadas",
-        "Entrega de archivos editables (AI / EPS / SVG)",
-        "Mockups de presentación realista",
-        "Versión monocromática + favicon",
-        "Mini manual de marca (tipografía, color, uso)",
-      ],
-      tag: { text: "Recomendado", color: "linear-gradient(90deg,#3FAD00,#1C7C00)" },
-      color: "#060629",
+   {
+    title: "Premium",
+    price: 127.41, // 15% de descuento aplicado
+    description: "Diseño de marca integral con manual, variantes y mockups profesionales.",
+    features: [
+      "3 propuestas iniciales + revisiones ilimitadas",
+      "Entrega de archivos editables (AI / EPS / SVG)",
+      "Mockups de presentación realista",
+      "Versión monocromática + favicon",
+      "Mini manual de marca (tipografía, color, uso)",
+    ],
+    tag: { 
+      text: "Ahorra 15%", 
+      color: "linear-gradient(90deg,#3FAD00,#1C7C00)" 
     },
+    color: "#060629",
+  },
   ];
 
   const formatPrice = (price: number) => {

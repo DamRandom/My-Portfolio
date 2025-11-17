@@ -9,20 +9,20 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
-  title: "Software Engineer | Damian Brito",
-  description: "Computer Science Engineer specialized in frontend development.",
+  title: "Ing. en Sistemas | Damian Brito",
+  description: "Ingeniero en Ciencias de la Computación especializado en desarrollo frontend.",
   authors: [{ name: "Damian Brito" }],
   keywords: [
     "Damian Brito",
-    "frontend developer",
-    "software engineer",
-    "portfolio",
-    "website",
+    "desarrollador frontend",
+    "ingeniero de software",
+    "portafolio",
+    "sitio web",
     "React",
     "Next.js",
-    "UI",
+    "interfaz de usuario",
     "freelancer",
-    "web developer",
+    "desarrollador web",
   ],
 
   icons: {
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body className={`${lora.variable} antialiased`}>
         {children}
       </body>

@@ -77,7 +77,7 @@ export default function DevServices() {
             onClick={() => handleContratar("esencial")}
             className="px-4 py-2 bg-[#060629] text-white text-sm font-medium hover:bg-[#101031] rounded-none transition"
           >
-            Contratar
+            Solicitar
           </button>
         </div>
       </motion.div>
@@ -115,7 +115,7 @@ export default function DevServices() {
             onClick={() => handleContratar("profesional")}
             className="px-4 py-2 bg-[#101031] text-white text-sm font-medium hover:bg-[#060629] rounded-none transition"
           >
-            Contratar
+            Solicitar
           </button>
         </div>
       </motion.div>
@@ -153,7 +153,7 @@ export default function DevServices() {
             onClick={() => handleContratar("profesional1y")}
             className="px-4 py-2 bg-[#060629] text-white text-sm font-medium hover:bg-[#101031] rounded-none transition"
           >
-            Contratar
+            Solicitar
           </button>
         </div>
       </motion.div>

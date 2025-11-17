@@ -3,55 +3,50 @@
 import { motion } from "framer-motion";
 
 export default function MarketingPackages() {
-  const packages = [
-    {
-      title: "Básico",
-      price: 89.9,
-      description: "Ideal para negocios pequeños que recién inician su presencia online.",
-      features: [
-        "Diseño de 3 piezas para redes sociales",
-        "Optimización SEO inicial",
-        "Configuración básica de WhatsApp Business",
-        "Asesoría rápida de marca (30 min)",
-      ],
-      color: "#060629",
+ const packages = [
+  {
+    title: "Básico",
+    price: 89.9,
+    description: "Pack sencillo para negocios que necesitan diseño constante sin complicaciones.",
+    features: [
+      "3 diseños para redes sociales",
+      "2 revisiones por diseño",
+      "Entrega en JPG/PNG listos para publicar",
+    ],
+    color: "#060629",
+  },
+
+  {
+    title: "Profesional",
+    price: 143.84,
+    description: "Versión ampliada del plan Básico, ideal para marcas que publican con mayor frecuencia.",
+    features: [
+      "6 diseños para redes sociales",
+      "2 revisiones por diseño",
+      "Entrega en JPG/PNG listos para publicar",
+    ],
+    tag: {
+      text: "Ahorra 20%",
+      color: "linear-gradient(90deg,#3FAD00,#1C7C00)", // etiqueta verde
     },
-    {
-      title: "Profesional",
-      price: 149.9,
-      description: "Perfecto si ya tienes redes activas y buscas un impulso real.",
-      features: [
-        "Diseño de 6 piezas mensuales para redes",
-        "SEO on-page completo (hasta 5 páginas)",
-        "Configuración avanzada de WhatsApp Business",
-        "Revisión de branding y optimización de perfil",
-        "1 reunión de seguimiento mensual",
-      ],
-      tag: {
-        text: "Más solicitado",
-        color: "linear-gradient(90deg,#FF7A18,#FF3D00)",
-      },
-      color: "#101031",
-    },
-    {
-      title: "Premium",
-      price: 199.9,
-      description: "Pack integral de marketing con estrategia, diseño y mantenimiento mensual.",
-      features: [
-        "10 piezas de redes + planificación mensual",
-        "SEO técnico + auditoría completa",
-        "Optimización de marca visual y textual",
-        "Configuración y automatización en WhatsApp Business",
-        "2 reuniones estratégicas mensuales",
-        "Asesoría en anuncios o campañas orgánicas",
-      ],
-      tag: {
-        text: "Ahorra 25%",
-        color: "linear-gradient(90deg,#3FAD00,#1C7C00)",
-      },
-      color: "#060629",
-    },
-  ];
+    color: "#101031",
+  },
+
+  {
+    title: "Premium",
+    price: 199.9,
+    description: "Suscripción mensual para marcas que necesitan producción constante y soporte directo.",
+    features: [
+      "10 pósters mensuales para redes",
+      "2 reuniones online cada mes",
+      "Revisión de contenido y calendario mensual",
+      "Ajustes ilimitados dentro del mes",
+      "Entrega en JPG/PNG + archivos editables según requerimiento",
+    ],
+  },
+];
+
+
 
   const formatPrice = (price: number) => {
     const [integer, decimal = "00"] = price.toFixed(2).split(".");
@@ -117,10 +112,6 @@ export default function MarketingPackages() {
           </div>
         </motion.div>
       ))}
-
-      <p className="text-xs text-[#06061B]/70 mt-4 text-center col-span-full">
-        *Precios ajustables según requerimientos del cliente.
-      </p>
     </div>
   );
 }

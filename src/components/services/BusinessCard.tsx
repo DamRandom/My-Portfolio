@@ -4,46 +4,47 @@ import { motion } from "framer-motion";
 
 export default function BusinessCardServices() {
   const packages = [
-    {
-      title: "Básico",
-      price: 24.9,
-      description: "Ideal para presentación sencilla y profesional.",
-      features: [
-        "Diseño de una cara",
-        "1 propuesta inicial",
-        "2 revisiones",
-        "Archivo JPG/PNG listo para impresión",
-      ],
-      color: "#060629",
-    },
-    {
-      title: "Profesional",
-      price: 39.9,
-      description: "Diseño completo con doble cara y alta calidad.",
-      features: [
-        "Diseño a doble cara",
-        "2 propuestas iniciales",
-        "4 revisiones",
-        "Archivo JPG/PNG/PDF listo para impresión",
-      ],
-      tag: { text: "Más solicitado", color: "linear-gradient(90deg,#FF7A18,#FF3D00)" },
-      color: "#101031",
-    },
-    {
-      title: "Premium",
-      price: 69.9,
-      description: "Diseño avanzado con variantes y mockups de presentación.",
-      features: [
-        "Diseño a doble cara + variantes",
-        "3 propuestas iniciales",
-        "Revisiones ilimitadas",
-        "Mockups de presentación",
-        "Archivos editables + listos para imprenta",
-      ],
-      tag: { text: "Recomendado", color: "linear-gradient(90deg,#3FAD00,#1C7C00)" },
-      color: "#060629",
-    },
-  ];
+  {
+    title: "Básico",
+    price: 24.9,
+    description: "Ideal para presentación sencilla y profesional.",
+    features: [
+      "Diseño de una cara",
+      "1 propuesta inicial",
+      "2 revisiones",
+      "Archivo JPG/PNG listo para impresión",
+    ],
+    tag: { text: "Más solicitado", color: "linear-gradient(90deg,#FF7A18,#FF3D00)" },
+    color: "#060629",
+  },
+  {
+    title: "Profesional",
+    price: 39.9,
+    description: "Diseño completo con doble cara y alta calidad.",
+    features: [
+      "Diseño a doble cara",
+      "2 propuestas iniciales",
+      "4 revisiones",
+      "Archivo JPG/PNG/PDF listo para impresión",
+    ],
+    color: "#101031",
+  },
+  {
+    title: "Premium",
+    price: 62.91, 
+    description: "Diseño avanzado con variantes y mockups de presentación.",
+    features: [
+      "Diseño a doble cara + variantes",
+      "3 propuestas iniciales",
+      "Revisiones ilimitadas",
+      "Mockups de presentación",
+      "Archivos editables + listos para imprenta",
+    ],
+    tag: { text: "Ahorra 10%", color: "linear-gradient(90deg,#3FAD00,#1C7C00)" },
+    color: "#060629",
+  },
+];
+
 
  const formatPrice = (price: number) => {
   const [integer, decimal = "00"] = price.toFixed(2).split(".");
