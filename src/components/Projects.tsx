@@ -83,12 +83,13 @@ export default function Projects() {
                         <Image
                           src={overlayLogo}
                           alt={`Logo de ${title}`}
-                          width={120}
-                          height={40}
+                          width={300} // valor alto para mantener proporción interna
+                          height={300} // Next lo exige, pero no se usa visualmente
                           priority
                           style={{
                             width: "auto",
                             height: "auto",
+                            maxHeight: "90%", // el límite real
                             objectFit: "contain",
                           }}
                         />
