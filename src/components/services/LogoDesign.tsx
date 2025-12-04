@@ -3,114 +3,122 @@
 import { motion } from "framer-motion";
 
 export default function LogoDesignServices() {
-  const packages = [
-    {
-      title: "Básico",
-      price: 49.9,
-      description: "Perfecto para emprendedores que buscan una identidad visual inicial.",
-      features: [
-        "1 propuesta de logo",
-        "2 revisiones",
-        "Entrega en formato JPG y PNG",
-        "Diseño limpio y profesional",
-      ],
-      color: "#060629",
-    },
-    {
-      title: "Profesional",
-      price: 89.9,
-      description: "Diseño completo con variantes, tipografía personalizada y paleta de color.",
-      features: [
-        "2 propuestas iniciales",
-        "4 revisiones",
-        "Logo en versiones vertical, horizontal e ícono",
-        "Entrega en formatos JPG, PNG y PDF",
-        "Guía básica de uso del logo",
-      ],
-      tag: { text: "Más solicitado", color: "linear-gradient(90deg,#FF7A18,#FF3D00)" },
-      color: "#101031",
-    },
-   {
-    title: "Premium",
-    price: 127.41, // 15% de descuento aplicado
-    description: "Diseño de marca integral con manual, variantes y mockups profesionales.",
-    features: [
-      "3 propuestas iniciales + revisiones ilimitadas",
-      "Entrega de archivos editables (AI / EPS / SVG)",
-      "Mockups de presentación realista",
-      "Versión monocromática + favicon",
-      "Mini manual de marca (tipografía, color, uso)",
-    ],
-    tag: { 
-      text: "Ahorra 15%", 
-      color: "linear-gradient(90deg,#3FAD00,#1C7C00)" 
-    },
-    color: "#060629",
-  },
-  ];
-
-  const formatPrice = (price: number) => {
-    const [integer, decimal = "00"] = price.toFixed(2).split(".");
-    return (
-      <>
-        S/{integer}
-        <span className="text-[0.6em] align-top ml-[1px] leading-none relative top-[0.40em]">
-          .{decimal}
-        </span>
-      </>
-    );
-  };
-
-  const handleContact = (pkg: string, price: number) => {
+  const handleSolicitar = (
+    type: "basico" | "profesional" | "premium"
+  ) => {
     const telefono = "51944784437";
-    const mensaje = `Hola Damian, me interesa el paquete ${pkg} de Diseño de Logos. Precio: S/${price.toFixed(
-      2
-    )}`;
+
+    const mensaje =
+      type === "basico"
+        ? "Hola, quiero recibir una orientación breve sobre la propuesta Básico de diseño de logo. ¿Podemos conversar?"
+        : type === "profesional"
+        ? "Hola, estoy revisando la propuesta Profesional de diseño de logo. ¿Podemos hablar?"
+        : "Hola, deseo conocer mejor la propuesta Premium de diseño de marca integral. ¿Podemos conversar?";
+
     const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
     window.open(url, "_blank");
   };
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto font-lora items-stretch">
-      {packages.map((pkg) => (
-        <motion.div
-          key={pkg.title}
-          whileHover={{ scale: 1.005 }}
-          className="relative flex flex-col h-full p-6 bg-white/90 border border-gray-200 shadow-sm rounded-none transition"
+
+      {/* Básico */}
+      <motion.div
+        whileHover={{ scale: 1.005 }}
+        className="relative flex flex-col h-full p-6 bg-white/90 border border-gray-200 shadow-sm rounded-none transition"
+      >
+        {/* Etiqueta eliminada */}
+
+        <h3 className="text-lg font-semibold mb-3">Básico</h3>
+
+        <p className="text-sm text-[#06061B]/80 mb-4">
+          Un desarrollo inicial para emprendedores que necesitan identidad visual mínima pero sólida.
+        </p>
+
+        <ul className="text-sm space-y-1 mb-6">
+          <li className="px-2">1 propuesta de logo</li>
+          <li className="px-2">2 revisiones</li>
+          <li className="px-2">Entrega en JPG y PNG</li>
+          <li className="px-2">Estilo limpio y funcional</li>
+        </ul>
+
+        <div className="flex justify-end items-center mt-auto">
+          <button
+            onClick={() => handleSolicitar("basico")}
+            className="px-4 py-2 bg-[#060629] text-white text-sm font-medium hover:bg-[#101031] transition rounded-none"
+          >
+            Contactar
+          </button>
+        </div>
+      </motion.div>
+
+      {/* Profesional */}
+      <motion.div
+        whileHover={{ scale: 1.005 }}
+        className="relative flex flex-col h-full p-6 bg-white/90 border border-gray-200 shadow-sm rounded-none transition"
+      >
+        <div
+          className="absolute -top-3 right-3 px-3 py-1 text-xs font-semibold text-white"
+          style={{ background: "linear-gradient(90deg,#FF7A18,#FF3D00)" }}
         >
-          {pkg.tag && (
-            <div
-              className="absolute -top-3 right-3 px-3 py-1 text-xs font-semibold text-white"
-              style={{ background: pkg.tag.color }}
-            >
-              {pkg.tag.text}
-            </div>
-          )}
+          Recomendado
+        </div>
 
-          <h3 className="text-lg font-semibold mb-3">{pkg.title}</h3>
-          <p className="text-sm text-[#06061B]/80 mb-4">{pkg.description}</p>
-          <ul className="text-sm space-y-1 mb-6">
-            {pkg.features.map((f) => (
-              <li key={f} className="px-2">
-                {f}
-              </li>
-            ))}
-          </ul>
+        <h3 className="text-lg font-semibold mb-3">Profesional</h3>
 
-          <div className="flex justify-between items-center mt-auto">
-            <div>
-              <div className="text-xs text-[#06061B]/70">Precio</div>
-              <div className="text-xl font-bold text-[#06061B]">{formatPrice(pkg.price)}</div>
-            </div>
-            <button
-              onClick={() => handleContact(pkg.title, pkg.price)}
-              className="px-4 py-2 bg-[#060629] text-white text-sm font-medium hover:bg-[#101031] rounded-none transition"
-            >
-              Solicitar
-            </button>
-          </div>
-        </motion.div>
-      ))}
+        <p className="text-sm text-[#06061B]/80 mb-4">
+          Un sistema visual más completo con variantes, orden tipográfico y paleta de color definida.
+        </p>
+
+        <ul className="text-sm space-y-1 mb-6">
+          <li className="px-2">2 propuestas iniciales</li>
+          <li className="px-2">4 revisiones</li>
+          <li className="px-2">Versiones vertical, horizontal e ícono</li>
+          <li className="px-2">Entrega en JPG, PNG y PDF</li>
+          <li className="px-2">Guía básica de uso</li>
+        </ul>
+
+        <div className="flex justify-end items-center mt-auto">
+          <button
+            onClick={() => handleSolicitar("profesional")}
+            className="px-4 py-2 bg-[#060629] text-white text-sm font-medium hover:bg-[#101031] transition rounded-none"
+          >
+            Contactar
+          </button>
+        </div>
+      </motion.div>
+
+      {/* Premium */}
+      <motion.div
+        whileHover={{ scale: 1.005 }}
+        className="relative flex flex-col h-full p-6 bg-white/90 border border-gray-200 shadow-sm rounded-none transition"
+      >
+        {/* Etiqueta eliminada */}
+
+        <h3 className="text-lg font-semibold mb-3">Premium</h3>
+
+        <p className="text-sm text-[#06061B]/80 mb-4">
+          Un desarrollo integral para marcas que requieren solidez, coherencia y presencia profesional desde el inicio.
+        </p>
+
+        <ul className="text-sm space-y-1 mb-6">
+          <li className="px-2">3 propuestas iniciales + revisiones ilimitadas</li>
+          <li className="px-2">Archivos editables (AI / EPS / SVG)</li>
+          <li className="px-2">Mockups de presentación</li>
+          <li className="px-2">Versión monocromática + favicon</li>
+          <li className="px-2">Mini manual de marca</li>
+        </ul>
+
+        <div className="flex justify-end items-center mt-auto">
+          <button
+            onClick={() => handleSolicitar("premium")}
+            className="px-4 py-2 bg-[#060629] text-white text-sm font-medium hover:bg-[#101031] transition rounded-none"
+          >
+            Contactar
+          </button>
+        </div>
+      </motion.div>
+
     </div>
   );
 }
