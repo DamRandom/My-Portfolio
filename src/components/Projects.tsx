@@ -108,28 +108,26 @@ export default function Projects() {
                     {description}
                   </p>
 
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {tags.map((tag) => (
-                      <motion.button
-                        key={tag}
-                        initial={false}
-                        animate={{
-                          backgroundColor: "#e9e9e9",
-                          color: "#06061B",
-                          boxShadow: "0 4px 8px rgba(6, 6, 41, 0.25)",
-                          scale: 1,
-                        }}
-                        transition={{
-                          type: "spring",
-                          stiffness: 200,
-                          damping: 20,
-                          duration: 0.3,
-                        }}
-                        className="px-3 py-1 text-xs sm:text-sm font-medium backdrop-blur-sm rounded-none border border-transparent cursor-default"
-                      >
-                        {tag}
-                      </motion.button>
-                    ))}
+                  {/* Tags como carrusel infinito */}
+                  <div className="relative overflow-hidden w-full mb-4">
+                    <motion.div
+                      className="flex gap-6 whitespace-nowrap"
+                      animate={{ x: ["0%", "-50%"] }}
+                      transition={{
+                        repeat: Infinity,
+                        ease: "linear",
+                        duration: 20,
+                      }}
+                    >
+                      {[...tags, ...tags].map((tag, index) => (
+                        <span
+                          key={tag + index}
+                          className="text-sm font-light tracking-wide text-[#06061B]/70 select-none"
+                        >
+                          #{tag}
+                        </span>
+                      ))}
+                    </motion.div>
                   </div>
 
                   <div className="flex gap-6 text-[#06061B] text-xl">

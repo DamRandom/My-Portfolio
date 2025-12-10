@@ -13,10 +13,20 @@ export default function BotonDescarga() {
     link.remove();
   }, []);
 
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    e.preventDefault();
+    handleDownload();
+  }, [handleDownload]);
+
   return (
     <StyledWrapper>
-      <div className="button" onClick={handleDownload}>
-        <a>Descargar CV</a>
+      <div className="button">
+        <a 
+          onClick={handleDownload}
+          onTouchStart={handleTouchStart}
+        >
+          Descargar CV
+        </a>
         <b className="top">click para descargar</b>
         <b className="bottom">176KB .pdf</b>
       </div>
@@ -48,6 +58,10 @@ const StyledWrapper = styled.div`
     border-radius: 0;
     box-shadow: 0 10px 25px rgba(6, 6, 41, 0.3);
     transition: all 0.4s ease;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+    user-select: none;
   }
 
   b {
@@ -66,19 +80,21 @@ const StyledWrapper = styled.div`
     transition: all 0.4s ease;
   }
 
-  .button:hover a {
-    background: #fafafa;
-    color: #060629;
-    box-shadow: 0 12px 25px rgba(6, 6, 41, 0.35);
-    transform: translateY(-2px);
-  }
+  @media (hover: hover) and (pointer: fine) {
+    .button:hover a {
+      background: #fafafa;
+      color: #060629;
+      box-shadow: 0 12px 25px rgba(6, 6, 41, 0.35);
+      transform: translateY(-2px);
+    }
 
-  .button:hover .top {
-    margin: -85px 0 0 10px;
-  }
+    .button:hover .top {
+      margin: -85px 0 0 10px;
+    }
 
-  .button:hover .bottom {
-    margin: -5px 0 0 10px;
+    .button:hover .bottom {
+      margin: -5px 0 0 10px;
+    }
   }
 
   .button:active a {
