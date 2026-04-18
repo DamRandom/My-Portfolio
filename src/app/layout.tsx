@@ -9,6 +9,7 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://damianbrito.dev"),
   title: "Ing. en Sistemas | Damian Brito",
   description: "Ingeniero en Ciencias de la Computación especializado en desarrollo frontend.",
   authors: [{ name: "Damian Brito" }],
@@ -24,7 +25,28 @@ export const metadata: Metadata = {
     "freelancer",
     "desarrollador web",
   ],
-
+  openGraph: {
+    title: "Ing. en Sistemas | Damian Brito",
+    description: "Ingeniero en Ciencias de la Computación especializado en desarrollo frontend.",
+    url: "/",
+    siteName: "Portafolio Damian Brito",
+    images: [
+      {
+        url: "/images/profile.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Damian Brito - Portafolio",
+      },
+    ],
+    locale: "es_PE",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ing. en Sistemas | Damian Brito",
+    description: "Ingeniero en Ciencias de la Computación especializado en desarrollo frontend.",
+    images: ["/images/profile.jpg"],
+  },
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },

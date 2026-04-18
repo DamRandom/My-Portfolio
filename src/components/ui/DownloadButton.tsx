@@ -1,34 +1,51 @@
 "use client";
 
 import styled from "styled-components";
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 
 export default function BotonDescarga() {
+  const [lang, setLang] = useState<"EN" | "ES">("ES");
+
   const handleDownload = useCallback(() => {
+    const file =
+      lang === "EN"
+        ? "/DamianBritoResumeEN.pdf"
+        : "/DamianBritoResumeES.pdf";
+
     const link = document.createElement("a");
-    link.href = "/DamianBritoResumeEN.pdf";
-    link.download = "DamianBritoResumeEN.pdf";
+    link.href = file;
+    link.download = file.split("/").pop() || "cv.pdf";
     document.body.appendChild(link);
     link.click();
     link.remove();
-  }, []);
+  }, [lang]);
 
-  const handleTouchStart = useCallback((e: React.TouchEvent) => {
-    e.preventDefault();
-    handleDownload();
-  }, [handleDownload]);
+  const handleTouchStart = useCallback(
+    (e: React.TouchEvent) => {
+      e.preventDefault();
+      handleDownload();
+    },
+    [handleDownload]
+  );
+
+  const toggleLang = useCallback(() => {
+    setLang((prev) => (prev === "ES" ? "EN" : "ES"));
+  }, []);
 
   return (
     <StyledWrapper>
       <div className="button">
-        <a 
-          onClick={handleDownload}
-          onTouchStart={handleTouchStart}
-        >
+        <a onClick={handleDownload} onTouchStart={handleTouchStart}>
           Descargar CV
         </a>
-        <b className="top">click para descargar</b>
-        <b className="bottom">176KB .pdf</b>
+
+        <b className="top" onClick={toggleLang}>
+          cambiar idioma
+        </b>
+
+        <b className="bottom">
+          {lang === "ES" ? "Español · 145KB" : "English · 143KB"}
+        </b>
       </div>
     </StyledWrapper>
   );
@@ -60,7 +77,6 @@ const StyledWrapper = styled.div`
     transition: all 0.4s ease;
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
-    cursor: pointer;
     user-select: none;
   }
 
@@ -78,6 +94,11 @@ const StyledWrapper = styled.div`
     border-radius: 0;
     box-shadow: 0 8px 20px rgba(6, 6, 41, 0.2);
     transition: all 0.4s ease;
+    user-select: none;
+  }
+
+  .top {
+    cursor: pointer;
   }
 
   @media (hover: hover) and (pointer: fine) {
