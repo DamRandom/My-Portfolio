@@ -1,14 +1,15 @@
 "use client";
 
-import styled from "styled-components";
-import { useCallback, useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
+import { useCallback } from "react";
+import { FiDownload } from "react-icons/fi";
 
 export default function BotonDescarga() {
-  const [lang, setLang] = useState<"EN" | "ES">("ES");
+  const { language } = useLanguage();
 
   const handleDownload = useCallback(() => {
     const file =
-      lang === "EN"
+      language === "en"
         ? "/DamianBritoResumeEN.pdf"
         : "/DamianBritoResumeES.pdf";
 
@@ -18,108 +19,21 @@ export default function BotonDescarga() {
     document.body.appendChild(link);
     link.click();
     link.remove();
-  }, [lang]);
-
-  const handleTouchStart = useCallback(
-    (e: React.TouchEvent) => {
-      e.preventDefault();
-      handleDownload();
-    },
-    [handleDownload]
-  );
-
-  const toggleLang = useCallback(() => {
-    setLang((prev) => (prev === "ES" ? "EN" : "ES"));
-  }, []);
+  }, [language]);
 
   return (
-    <StyledWrapper>
-      <div className="button">
-        <a onClick={handleDownload} onTouchStart={handleTouchStart}>
-          Descargar CV
-        </a>
-
-        <b className="top" onClick={toggleLang}>
-          cambiar idioma
-        </b>
-
-        <b className="bottom">
-          {lang === "ES" ? "Español · 145KB" : "English · 143KB"}
-        </b>
-      </div>
-    </StyledWrapper>
+    <div className="fixed bottom-10 right-8 z-50">
+      <button
+        onClick={handleDownload}
+        className="group flex items-center gap-4 bg-slate-900 text-white px-8 py-5 font-bold text-[10px] uppercase tracking-[0.3em] shadow-2xl hover:bg-slate-800 transition-all hover:-translate-y-1 active:translate-y-0"
+      >
+        <span>
+          {language === "en" ? "Download CV" : "Descargar CV"}
+        </span>
+        <div className="p-2 bg-white/10 rounded-none group-hover:bg-white/20 transition-colors">
+          <FiDownload size={14} className="transition-transform group-hover:-translate-y-0.5" />
+        </div>
+      </button>
+    </div>
   );
 }
-
-const StyledWrapper = styled.div`
-  position: fixed;
-  bottom: 40px;
-  right: 24px;
-  z-index: 50;
-
-  .button {
-    position: relative;
-    cursor: pointer;
-    perspective: 600px;
-  }
-
-  .button a {
-    display: block;
-    height: 50px;
-    width: 200px;
-    background: #060629;
-    color: #f5f5f5;
-    font: 500 15px/50px "Lora", serif;
-    text-align: center;
-    letter-spacing: 1px;
-    border-radius: 0;
-    box-shadow: 0 10px 25px rgba(6, 6, 41, 0.3);
-    transition: all 0.4s ease;
-    touch-action: manipulation;
-    -webkit-tap-highlight-color: transparent;
-    user-select: none;
-  }
-
-  b {
-    background: #fafafa;
-    display: block;
-    height: 40px;
-    width: 180px;
-    margin: -50px 0 0 10px;
-    text-align: center;
-    font: 500 12px/40px "Lora", serif;
-    color: #060629;
-    position: absolute;
-    z-index: -1;
-    border-radius: 0;
-    box-shadow: 0 8px 20px rgba(6, 6, 41, 0.2);
-    transition: all 0.4s ease;
-    user-select: none;
-  }
-
-  .top {
-    cursor: pointer;
-  }
-
-  @media (hover: hover) and (pointer: fine) {
-    .button:hover a {
-      background: #fafafa;
-      color: #060629;
-      box-shadow: 0 12px 25px rgba(6, 6, 41, 0.35);
-      transform: translateY(-2px);
-    }
-
-    .button:hover .top {
-      margin: -85px 0 0 10px;
-    }
-
-    .button:hover .bottom {
-      margin: -5px 0 0 10px;
-    }
-  }
-
-  .button:active a {
-    transform: translateY(1px);
-    box-shadow: 0 4px 10px rgba(6, 6, 41, 0.25);
-  }
-`;
