@@ -14,11 +14,11 @@ export default function SobreMi() {
       <div className="max-w-6xl mx-auto space-y-16">
         {/* Título Consistente */}
         <div className="w-full">
-          <div className="flex justify-between items-end mb-4">
-            <h2 className="text-4xl font-bold tracking-tighter text-slate-900 uppercase">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-4 gap-2 sm:gap-0">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-slate-900 uppercase">
               {t("about.title")}
             </h2>
-            <span className="text-xs font-bold uppercase tracking-[0.4em] text-slate-300">
+            <span className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.4em] text-slate-300">
               {t("about.subtitle")}
             </span>
           </div>

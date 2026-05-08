@@ -14,7 +14,7 @@ export default function ParticleBackground() {
 
     let particles: Particle[] = [];
     let animationFrameId: number;
-    let mouse = { x: -100, y: -100 };
+    const mouse = { x: -100, y: -100 };
 
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;

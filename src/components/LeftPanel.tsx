@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { FiGithub, FiLinkedin, FiMail, FiDownload } from "react-icons/fi";
 
 interface LeftPanelProps {
@@ -19,7 +20,7 @@ export default function LeftPanel({ activeSection }: LeftPanelProps) {
     <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
       <div>
         <h1 className="text-4xl font-bold tracking-tighter text-slate-100 sm:text-5xl">
-          <a href="/">Damian Brito</a>
+          <Link href="/">Damian Brito</Link>
         </h1>
         <h2 className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl opacity-90">
           Ingeniero en Sistemas

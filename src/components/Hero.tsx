@@ -10,7 +10,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col justify-center bg-[#fcfcfc] px-6 md:px-20 overflow-hidden"
+      className="relative min-h-screen flex flex-col justify-center bg-[#fcfcfc] px-6 md:px-20 overflow-hidden py-20 lg:py-0"
     >
       {/* Decorative Background Line */}
       <div className="absolute top-0 left-[40%] w-px h-full bg-slate-100 hidden md:block" />
@@ -28,7 +28,7 @@ export default function Hero() {
             <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-400">
               {t("hero.portfolio")} / 2025
             </span>
-            <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-black tracking-tighter text-slate-900 uppercase leading-[0.8] mb-4">
+            <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-[10rem] font-black tracking-tighter text-slate-900 uppercase leading-[0.85] md:leading-[0.8] mb-4">
               Damian <br />
               <span className="text-transparent stroke-text">Brito</span>
             </h1>
@@ -98,8 +98,8 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="absolute bottom-10 left-10 opacity-[0.02] pointer-events-none select-none">
-        <span className="text-[20rem] font-black italic tracking-tighter">DB</span>
+      <div className="absolute bottom-10 left-10 opacity-[0.02] pointer-events-none select-none hidden sm:block">
+        <span className="text-[10rem] md:text-[20rem] font-black italic tracking-tighter">DB</span>
       </div>
 
       <style jsx>{`

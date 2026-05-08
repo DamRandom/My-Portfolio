@@ -7,7 +7,7 @@ type Language = "es" | "en";
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: (key: string) => any;
+  t: (key: string) => any; // eslint-disable-line @typescript-eslint/no-explicit-any
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -15,7 +15,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export const LanguageProvider = ({ children }: { children: React.ReactNode }) => {
   const [language, setLanguage] = useState<Language>("es");
 
-  const translations: Record<Language, Record<string, any>> = {
+  const translations: Record<Language, Record<string, any>> = { // eslint-disable-line @typescript-eslint/no-explicit-any
     es: {
       hero: {
         portfolio: "Portafolio Personal",
@@ -97,6 +97,13 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
         coffee: "Invite a Coffee",
         rights: "TODOS LOS DERECHOS RESERVADOS.",
         tagline: "Arquitectando Espacios Digitales"
+      },
+      referral: {
+        title: "Programa de Referidos",
+        subtitle: "Trabaja con Nosotros",
+        description: "Adquiere tu código único y empieza a ganar compartiendo mi trabajo.",
+        benefit: "Gana un 10% del pago final por cada persona que contacte y concrete un proyecto usando tu código de referido.",
+        cta: "Solicitar Código"
       }
     },
     en: {
@@ -180,6 +187,13 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
         coffee: "Invite a Coffee",
         rights: "ALL RIGHTS RESERVED.",
         tagline: "Architecting Digital Spaces"
+      },
+      referral: {
+        title: "Referral Program",
+        subtitle: "Work with Us",
+        description: "Get your unique code and start earning by sharing my work.",
+        benefit: "Earn 10% of the final payment for every person who contacts and completes a project using your referral code.",
+        cta: "Request Code"
       }
     }
   };
@@ -190,7 +204,7 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
     for (const k of keys) {
       value = value?.[k];
     }
-    return value || key;
+    return typeof value === "string" ? value : key;
   };
 
   return (
