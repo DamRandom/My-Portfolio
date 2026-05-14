@@ -3,9 +3,12 @@
 import Image from "next/image";
 import { Building2, Phone, Mail, Coffee } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import React, { useState } from "react";
+import DonationModal from "./DonationModal";
 
 export default function SeccionContacto() {
   const { t } = useLanguage();
+  const [isDonationModalOpen, setIsDonationModalOpen] = useState(false);
 
   return (
     <section
@@ -85,18 +88,22 @@ export default function SeccionContacto() {
 
             {/* Botón de Café Estilo Ghost / Outline */}
             <div className="w-full md:w-auto flex justify-end">
-              <a
-                href="https://www.buymeacoffee.com/"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => setIsDonationModalOpen(true)}
                 className="group inline-flex items-center gap-3 border-2 border-slate-900 px-6 py-3 font-bold text-[10px] uppercase tracking-[0.3em] hover:bg-slate-900 hover:text-white transition-all duration-300"
               >
                 <Coffee size={14} className="transition-transform group-hover:rotate-12" />
                 <span>{t("contact.coffee")}</span>
-              </a>
+              </button>
             </div>
           </div>
         </div>
+
+        {/* Modal de Donación */}
+        <DonationModal 
+          isOpen={isDonationModalOpen} 
+          onClose={() => setIsDonationModalOpen(false)} 
+        />
       </div>
 
       <div className="max-w-6xl mx-auto mt-12 flex justify-between items-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400 px-2 opacity-60">

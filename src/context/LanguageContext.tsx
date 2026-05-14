@@ -95,6 +95,17 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
         email: "Email",
         phone: "Teléfono",
         coffee: "Invite a Coffee",
+        donation_modal: {
+          title: "Invítame un Café",
+          subtitle: "Tu apoyo me ayuda a seguir creando",
+          paypal: "PayPal (Extranjero)",
+          yape: "Yape (Perú)",
+          plin: "Plin (Perú)",
+          copy_number: "Copiar Número",
+          copied: "¡Copiado!",
+          cta_paypal: "Ir a PayPal",
+          phone_label: "Número de cuenta:"
+        },
         rights: "TODOS LOS DERECHOS RESERVADOS.",
         tagline: "Arquitectando Espacios Digitales"
       },
@@ -185,6 +196,17 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
         email: "Email",
         phone: "Phone",
         coffee: "Invite a Coffee",
+        donation_modal: {
+          title: "Buy me a Coffee",
+          subtitle: "Your support helps me keep creating",
+          paypal: "PayPal (Global)",
+          yape: "Yape (Perú)",
+          plin: "Plin (Perú)",
+          copy_number: "Copy Number",
+          copied: "Copied!",
+          cta_paypal: "Go to PayPal",
+          phone_label: "Account number:"
+        },
         rights: "ALL RIGHTS RESERVED.",
         tagline: "Architecting Digital Spaces"
       },
