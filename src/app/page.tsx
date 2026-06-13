@@ -7,7 +7,6 @@ import ParallaxBackground from "@/components/ParallaxBackground";
 const Skills = dynamic(() => import("../components/Skills"));
 const Services = dynamic(() => import("@/components/Services"));
 const ProjectSection = dynamic(() => import("@/components/Projects"));
-const ReferralCTA = dynamic(() => import("@/components/ReferralCTA"));
 const ContactSection = dynamic(() => import("@/components/ContactMe"));
 const DownloadButton = dynamic(() => import("@/components/ui/DownloadButton"));
 
@@ -27,7 +26,6 @@ export default function Home() {
         <Skills />
         <Services />
         <ProjectSection />
-        <ReferralCTA />
         <ContactSection />
         <DownloadButton />
       </div>

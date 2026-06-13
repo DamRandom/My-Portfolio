@@ -12,7 +12,7 @@ export default function SobreMi() {
       className="relative w-full bg-[#fcfcfc] py-24 px-6 md:px-20 text-[#0f172a]"
     >
       <div className="max-w-6xl mx-auto space-y-16">
-        {/* Título Consistente */}
+        {/* Header */}
         <div className="w-full">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-4 gap-2 sm:gap-0">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-slate-900 uppercase">
@@ -26,8 +26,9 @@ export default function SobreMi() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
+          {/* Left */}
           <div className="md:col-span-8 space-y-8">
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -36,8 +37,8 @@ export default function SobreMi() {
             >
               {t("about.p1")}
             </motion.p>
-            
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
@@ -48,18 +49,33 @@ export default function SobreMi() {
             </motion.div>
           </div>
 
+          {/* Right */}
           <div className="md:col-span-4 space-y-12">
             <div className="space-y-2 group">
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">{t("about.specialty")}</span>
-              <p className="text-sm font-bold text-slate-900 border-l-2 border-slate-100 pl-4 group-hover:border-slate-900 transition-all">Frontend Engineer</p>
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
+                {t("about.specialty")}
+              </span>
+              <p className="text-sm font-bold text-slate-900 border-l-2 border-slate-100 pl-4 group-hover:border-slate-900 transition-all">
+                {t("about.specValue")}
+              </p>
             </div>
+
             <div className="space-y-2 group">
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">{t("about.focus")}</span>
-              <p className="text-sm font-bold text-slate-900 border-l-2 border-slate-100 pl-4 group-hover:border-slate-900 transition-all">Clean Architecture</p>
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
+                {t("about.focus")}
+              </span>
+              <p className="text-sm font-bold text-slate-900 border-l-2 border-slate-100 pl-4 group-hover:border-slate-900 transition-all">
+                {t("about.focusValue")}
+              </p>
             </div>
+
             <div className="space-y-2 group">
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">{t("about.interests")}</span>
-              <p className="text-sm font-bold text-slate-900 border-l-2 border-slate-100 pl-4 group-hover:border-slate-900 transition-all">Gaming & Music Production</p>
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
+                {t("about.interests")}
+              </span>
+              <p className="text-sm font-bold text-slate-900 border-l-2 border-slate-100 pl-4 group-hover:border-slate-900 transition-all">
+                {t("about.interestsValue")}
+              </p>
             </div>
           </div>
         </div>
