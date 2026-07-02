@@ -14,6 +14,7 @@ export default {
       },
       fontFamily: {
         lora: "var(--font-lora)",
+        sans: ["var(--font-inter)", "sans-serif"],
       },
     },
   },

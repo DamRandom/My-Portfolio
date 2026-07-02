@@ -26,7 +26,7 @@ export default function DevServices() {
         profesional:
           "Hi, I want a website that helps me get clients consistently. Can you guide me?",
         profesional1y:
-          "Hi, I’m looking for a complete solution to grow and automate my business. Can we discuss?"
+          "Hi, I'm looking for a complete solution to grow and automate my business. Can we discuss?"
       }
     };
 
@@ -36,14 +36,14 @@ export default function DevServices() {
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-slate-200 bg-white">
+    <div className="flex flex-nowrap overflow-x-auto snap-x snap-mandatory hide-scrollbar md:grid md:grid-cols-3 gap-0 border-2 border-black bg-white">
       {/* Esencial */}
-      <div className="flex flex-col p-8 md:p-10 border-b md:border-b-0 md:border-r border-slate-100 hover:bg-slate-50 group">
+      <div className="min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center md:snap-align-none flex flex-col p-8 md:p-10 border-r-2 border-black bg-white hover:bg-slate-50 transition-colors group">
         <div className="space-y-4 mb-8">
-          <h3 className="text-xl font-bold uppercase tracking-tight text-slate-900">
+          <h3 className="text-xl font-bold uppercase tracking-widest text-black">
             {language === "es" ? "Esencial" : "Essential"}
           </h3>
-          <p className="text-sm text-slate-500 leading-relaxed min-h-[60px]">
+          <p className="text-sm text-slate-500 font-medium leading-relaxed min-h-[60px]">
             {language === "es"
               ? "Empieza a tener presencia online profesional para tu negocio."
               : "Start building a professional online presence for your business."}
@@ -66,7 +66,7 @@ export default function DevServices() {
               key={f}
               className="flex items-center gap-3 text-xs font-medium text-slate-600"
             >
-              <Check size={14} className="text-slate-400" />
+              <Check size={14} className="text-black" />
               {f}
             </li>
           ))}
@@ -74,24 +74,24 @@ export default function DevServices() {
 
         <button
           onClick={() => handleSolicitar("esencial")}
-          className="w-full py-4 bg-white border border-slate-900 text-slate-900 text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-slate-900 hover:text-white transition-all active:scale-95"
+          className="w-full py-4 bg-transparent border-2 border-black text-black text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-black hover:text-white transition-all active:scale-95"
         >
           {language === "es" ? "Empezar" : "Get Started"}
         </button>
       </div>
 
       {/* Profesional */}
-      <div className="flex flex-col p-8 md:p-10 border-b md:border-b-0 md:border-r border-slate-100 bg-slate-900 text-white relative overflow-hidden group">
+      <div className="min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center md:snap-align-none flex flex-col p-8 md:p-10 border-r-2 border-black bg-black text-white relative overflow-hidden group">
         <div className="space-y-4 mb-8 relative z-10">
           <div className="flex justify-between items-start">
-            <h3 className="text-xl font-bold uppercase tracking-tight">
+            <h3 className="text-xl font-bold uppercase tracking-widest">
               {language === "es" ? "Profesional" : "Professional"}
             </h3>
-            <span className="text-[8px] font-bold uppercase tracking-widest bg-white text-slate-900 px-2 py-1">
+            <span className="text-[8px] font-bold uppercase tracking-widest bg-white text-black px-2 py-1">
               {language === "es" ? "Popular" : "Popular"}
             </span>
           </div>
-          <p className="text-sm text-slate-400 leading-relaxed min-h-[60px]">
+          <p className="text-sm text-slate-400 font-medium leading-relaxed min-h-[60px]">
             {language === "es"
               ? "Convierte visitantes en clientes y haz crecer tu negocio."
               : "Turn visitors into clients and grow your business."}
@@ -117,7 +117,7 @@ export default function DevServices() {
               key={f}
               className="flex items-center gap-3 text-xs font-medium text-slate-300"
             >
-              <Check size={14} className="text-slate-500" />
+              <Check size={14} className="text-white" />
               {f}
             </li>
           ))}
@@ -125,7 +125,7 @@ export default function DevServices() {
 
         <button
           onClick={() => handleSolicitar("profesional")}
-          className="w-full py-4 bg-white text-slate-900 text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-slate-200 transition-all active:scale-95 relative z-10"
+          className="w-full py-4 bg-white text-black text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-slate-200 transition-all active:scale-95 relative z-10"
         >
           {language === "es" ? "Quiero más clientes" : "Get More Clients"}
         </button>
@@ -136,12 +136,12 @@ export default function DevServices() {
       </div>
 
       {/* Avanzado */}
-      <div className="flex flex-col p-8 md:p-10 hover:bg-slate-50 group">
+      <div className="min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center md:snap-align-none flex flex-col p-8 md:p-10 bg-white hover:bg-slate-50 transition-colors group">
         <div className="space-y-4 mb-8">
-          <h3 className="text-xl font-bold uppercase tracking-tight text-slate-900">
+          <h3 className="text-xl font-bold uppercase tracking-widest text-black">
             {language === "es" ? "Avanzado" : "Advanced"}
           </h3>
-          <p className="text-sm text-slate-500 leading-relaxed min-h-[60px]">
+          <p className="text-sm text-slate-500 font-medium leading-relaxed min-h-[60px]">
             {language === "es"
               ? "Haz crecer tu negocio y automatiza procesos clave."
               : "Scale your business and automate key processes."}
@@ -167,7 +167,7 @@ export default function DevServices() {
               key={f}
               className="flex items-center gap-3 text-xs font-medium text-slate-600"
             >
-              <Check size={14} className="text-slate-400" />
+              <Check size={14} className="text-black" />
               {f}
             </li>
           ))}
@@ -175,7 +175,7 @@ export default function DevServices() {
 
         <button
           onClick={() => handleSolicitar("profesional1y")}
-          className="w-full py-4 bg-white border border-slate-900 text-slate-900 text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-slate-900 hover:text-white transition-all active:scale-95"
+          className="w-full py-4 bg-transparent border-2 border-black text-black text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-black hover:text-white transition-all active:scale-95"
         >
           {language === "es" ? "Escalar mi negocio" : "Scale My Business"}
         </button>

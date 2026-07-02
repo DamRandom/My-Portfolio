@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 type Language = "es" | "en";
 
@@ -22,6 +23,7 @@ export const LanguageProvider = ({
   children: React.ReactNode;
 }) => {
   const [language, setLanguage] = useState<Language>("es");
+  const [isChanging, setIsChanging] = useState(false);
 
   const translations: Record<Language, Record<string, TranslationValue>> = {
     es: {
@@ -247,6 +249,17 @@ export const LanguageProvider = ({
     },
   };
 
+  const handleSetLanguage = (lang: Language) => {
+    if (lang === language) return;
+    setIsChanging(true);
+    // Cambiamos el idioma en el "background" mientras el spinner cubre
+    setTimeout(() => {
+      setLanguage(lang);
+      // Ocultamos el spinner poco después
+      setTimeout(() => setIsChanging(false), 300);
+    }, 400);
+  };
+
   const t = (key: string): string => {
     const keys = key.split(".");
     let value: TranslationValue = translations[language];
@@ -261,8 +274,22 @@ export const LanguageProvider = ({
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage, t }}>
       {children}
+      <AnimatePresence>
+        {isChanging && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-[9999] bg-white flex items-center justify-center pointer-events-none"
+          >
+            {/* Minimal Spinner */}
+            <div className="w-8 h-8 border-2 border-slate-200 border-t-black rounded-full animate-spin" />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </LanguageContext.Provider>
   );
 };

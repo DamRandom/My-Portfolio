@@ -19,13 +19,13 @@ export default function LeftPanel({ activeSection }: LeftPanelProps) {
   return (
     <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
       <div>
-        <h1 className="text-4xl font-bold tracking-tighter text-slate-100 sm:text-5xl">
+        <h1 className="text-4xl font-bold tracking-tighter text-black sm:text-5xl">
           <Link href="/">Damian Brito</Link>
         </h1>
-        <h2 className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl opacity-90">
+        <h2 className="mt-3 text-lg font-bold tracking-tight text-black sm:text-xl">
           Ingeniero en Sistemas
         </h2>
-        <p className="mt-6 max-w-xs leading-relaxed text-slate-400 font-light">
+        <p className="mt-6 max-w-xs leading-relaxed text-slate-500 font-medium">
           Especializado en el diseño y desarrollo de experiencias digitales de alto impacto, donde la técnica se encuentra con la estética.
         </p>
 
@@ -39,8 +39,8 @@ export default function LeftPanel({ activeSection }: LeftPanelProps) {
                   }`}
                   href={`#${item.id}`}
                 >
-                  <span className="nav-indicator mr-4 group-hover:w-16 group-hover:bg-slate-200"></span>
-                  <span className="nav-text text-xs font-bold uppercase tracking-[0.2em] text-slate-500 group-hover:text-slate-200 transition-colors">
+                  <span className="nav-indicator mr-4 group-hover:w-16 group-hover:bg-black"></span>
+                  <span className="nav-text text-xs font-bold uppercase tracking-[0.2em] text-slate-400 group-hover:text-black transition-colors">
                     {item.label}
                   </span>
                 </a>
@@ -54,28 +54,28 @@ export default function LeftPanel({ activeSection }: LeftPanelProps) {
         <a 
           href="/DamianBritoResumeES.pdf" 
           download 
-          className="group/cv inline-flex items-center gap-3 text-xs font-bold tracking-[0.2em] text-slate-400 hover:text-slate-100 transition-colors uppercase"
+          className="group/cv inline-flex items-center gap-3 text-xs font-bold tracking-[0.2em] text-slate-400 hover:text-black transition-colors uppercase"
         >
-          <div className="p-2 rounded-full border border-white/5 bg-white/[0.02] group-hover/cv:border-white/20 transition-colors">
+          <div className="p-2 rounded-none border-2 border-slate-300 bg-transparent group-hover/cv:border-black transition-colors">
             <FiDownload className="h-4 w-4 transition-transform group-hover/cv:-translate-y-0.5" />
           </div>
           <span>Descargar Dossier</span>
         </a>
         
         <ul className="flex items-center gap-8 ml-1" aria-label="Redes sociales">
-          <li className="text-slate-500 hover:text-slate-100 transition-colors">
+          <li className="text-slate-400 hover:text-black transition-colors">
             <a href="https://github.com/DamRandom" target="_blank" rel="noreferrer">
               <span className="sr-only">GitHub</span>
               <FiGithub size={22} />
             </a>
           </li>
-          <li className="text-slate-500 hover:text-slate-100 transition-colors">
+          <li className="text-slate-400 hover:text-black transition-colors">
             <a href="https://linkedin.com" target="_blank" rel="noreferrer">
               <span className="sr-only">LinkedIn</span>
               <FiLinkedin size={22} />
             </a>
           </li>
-          <li className="text-slate-500 hover:text-slate-100 transition-colors">
+          <li className="text-slate-400 hover:text-black transition-colors">
             <a href="mailto:britohdamian@gmail.com" target="_blank" rel="noreferrer">
               <span className="sr-only">Email</span>
               <FiMail size={22} />
