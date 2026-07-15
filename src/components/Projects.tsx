@@ -75,28 +75,37 @@ export default function Projects() {
                   className="group flex flex-col h-full relative min-w-[85vw] sm:min-w-[70vw] md:min-w-0 snap-center md:snap-align-none"
                 >
                   {/* Clean Image Container */}
-                  <div className="relative aspect-[16/10] w-full mb-8 overflow-hidden bg-white border border-slate-200 group-hover:border-black transition-colors flex items-center justify-center">
-                    
-                    {/* Project Screenshot (Shown on hover desktop, default mobile) */}
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-cover opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-700 z-10"
-                    />
+<div
+  className="relative aspect-[16/10] w-full mb-8 overflow-hidden border border-slate-200 group-hover:border-black transition-colors"
+>
 
-                    {/* Project Logo (Shown by default on desktop) */}
-                    {project.overlayLogo && (
-                      <div className="relative w-1/2 h-1/2 z-20 hidden lg:block opacity-100 lg:group-hover:opacity-0 transition-opacity duration-700">
-                        <Image
-                          src={project.overlayLogo}
-                          alt={`${project.title} logo`}
-                          fill
-                          className="object-contain"
-                        />
-                      </div>
-                    )}
-                  </div>
+  {/* ================= PREVIEW (Logo + Background) ================= */}
+  <div
+    className="absolute inset-0 hidden lg:flex items-center justify-center transition-opacity duration-700 group-hover:opacity-0"
+    style={{
+      backgroundColor: project.overlayBackground || "#ffffff",
+    }}
+  >
+    {project.overlayLogo && (
+      <div className="relative w-[58%] h-[58%]">
+        <Image
+          src={project.overlayLogo}
+          alt={`${project.title} logo`}
+          fill
+          className="object-contain"
+        />
+      </div>
+    )}
+  </div>
+
+  {/* ================= SCREENSHOT ================= */}
+  <Image
+    src={project.image}
+    alt={project.title}
+    fill
+    className="object-cover opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-700"
+  />
+</div>
 
                   <div className="space-y-6 flex-1 flex flex-col">
                     <div className="flex justify-between items-start">

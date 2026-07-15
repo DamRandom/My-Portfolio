@@ -30,8 +30,7 @@ export const LanguageProvider = ({
       hero: {
         portfolio: "Portafolio Personal",
         role: "Ingeniero en Sistemas / Full Stack",
-        description:
-          "Arquitecto de soluciones digitales que fusionan la precisión técnica con una estética minimalista.",
+        description: "Desarrollando productos web que la gente realmente usa.",
         ctaWork: "Explorar Trabajo",
         ctaContact: "Contacto Directo",
         status: "Disponible para Proyectos",
@@ -39,14 +38,14 @@ export const LanguageProvider = ({
       about: {
         title: "Sobre Mí",
         subtitle: "Perfil Personal",
-        p1: "Soy Damian Brito, Ingeniero en Sistemas de 24 años. Mi formación en la UCI (La Habana) sentó las bases de una disciplina técnica que hoy aplico en cada línea de código.",
-        p2: "Abordo el desarrollo con una mentalidad de arquitecto: cada componente debe tener un propósito, una estructura sólida y una estética pulcra.",
+        p1: "Soy Damian Brito, Ingeniero en Sistemas.",
+        p2: "Me especializo en el desarrollo de páginas web, trabajando principalmente con pequeños y medianos negocios para construir su presencia digital. Cuento con experiencia en frontend y conocimientos en backend y bases de datos, lo que me permite abordar proyectos de forma integral.",
         specialty: "Especialidad",
         focus: "Enfoque",
         interests: "Intereses",
-        specValue: "Ingeniero Frontend",
-        focusValue: "Arquitectura Limpia",
-        interestsValue: "Gaming & Producción Musical",
+        specValue: "Frontend Development",
+        focusValue: "Desarrollo Web",
+        interestsValue: "Gaming · Música",
       },
       skills: {
         title: "Habilidades",
@@ -57,39 +56,38 @@ export const LanguageProvider = ({
           backend: "Backend",
           infra: "Infraestructura",
           langDesc:
-            "La base técnica: los idiomas que utilizo para dar instrucciones precisas a las computadoras y construir la lógica central de cualquier aplicación.",
+            "La base de cualquier aplicación: los lenguajes que se usan para construir cómo funciona todo detrás de escena.",
           frontDesc:
-            "La capa visual y de interacción: me encargo de que lo que el usuario ve y toca sea rápido, intuitivo y estéticamente impecable.",
+            "Lo que el usuario ve e interactúa: el diseño, la estructura y la experiencia de una web o aplicación.",
           backDesc:
-            "El motor oculto: gestiono la seguridad, el almacenamiento de datos y la comunicación entre el servidor y el usuario.",
+            "Lo que ocurre detrás: gestiona los datos, la seguridad y todo lo que el usuario no ve directamente.",
           infraDesc:
-            "El despliegue y entorno: herramientas que garantizan que el software esté disponible, sea estable y fácil de actualizar.",
+            "Cómo todo se pone en línea: herramientas y configuraciones que mantienen la aplicación estable y funcionando correctamente.",
         },
       },
       services: {
-        title: "Servicios de Desarrollo",
-        description:
-          "Soluciones de ingeniería web enfocadas en performance, escalabilidad y una estética impecable.",
+        title: "Servicios",
+        subtitle: "Lo que puedo hacer por ti",
         quote:
           "* Cotización técnica personalizada según la complejidad del proyecto.",
         plans: {
-  essential: {
-    title: "Esencial",
-    desc: "Empieza a tener presencia online profesional para tu negocio.",
-    cta: "Empezar"
-  },
-  professional: {
-    title: "Profesional",
-    desc: "Convierte visitantes en clientes y haz crecer tu negocio.",
-    cta: "Quiero más clientes",
-    popular: "Popular"
-  },
-  extended: {
-    title: "Avanzado",
-    desc: "Haz crecer tu negocio y automatiza procesos clave.",
-    cta: "Escalar mi negocio"
-  }
-},
+          essential: {
+            title: "Esencial",
+            desc: "Empieza a tener presencia online profesional para tu negocio.",
+            cta: "Empezar",
+          },
+          professional: {
+            title: "Profesional",
+            desc: "Convierte visitantes en clientes y haz crecer tu negocio.",
+            cta: "Quiero más clientes",
+            popular: "Popular",
+          },
+          extended: {
+            title: "Avanzado",
+            desc: "Haz crecer tu negocio y automatiza procesos clave.",
+            cta: "Escalar mi negocio",
+          },
+        },
         features: {
           responsive: "Diseño Responsivo Premium",
           stack: "Implementación Next.js / React",
@@ -140,24 +138,23 @@ export const LanguageProvider = ({
     en: {
       hero: {
         portfolio: "Personal Portfolio",
-        role: "Systems Engineer / Full Stack",
-        description:
-          "Architect of digital solutions merging technical precision with a minimalist aesthetic.",
+        role: "Software Engineer / Full Stack",
+        description: "Building web products that people actually use.",
         ctaWork: "Explore Work",
-        ctaContact: "Direct Contact",
+        ctaContact: "Get in Touch",
         status: "Available for Projects",
       },
       about: {
         title: "About Me",
         subtitle: "Personal Profile",
-        p1: "I’m Damian Brito, a 24-year-old Systems Engineer. My studies at UCI (Havana) built the foundation for the technical discipline I bring to every line of code today.",
-        p2: "I approach development with an architect's mindset: every component must have a purpose, a solid structure, and a clean aesthetic.",
+        p1: "I am Damian Brito, a Software Engineer.",
+        p2: "I specialize in web development, primarily working with small and medium-sized businesses to build their digital presence. I have experience in frontend development and knowledge of backend systems and databases, which allows me to approach projects comprehensively.",
         specialty: "Specialty",
         focus: "Focus",
         interests: "Interests",
-        specValue: "Frontend Engineer",
-        focusValue: "Clean Architecture",
-        interestsValue: "Gaming & Listening to Music",
+        specValue: "Frontend Development",
+        focusValue: "Web Development",
+        interestsValue: "Gaming · Music",
       },
       skills: {
         title: "Skills",
@@ -168,38 +165,39 @@ export const LanguageProvider = ({
           backend: "Backend",
           infra: "Infrastructure",
           langDesc:
-            "The technical foundation: the languages I use to provide precise instructions to computers and build the core logic of any application.",
+            "The core of any application: the languages used to build how everything works behind the scenes.",
           frontDesc:
-            "The visual and interaction layer: I ensure that what the user sees and touches is fast, intuitive, and aesthetically flawless.",
+            "What users see and interact with: the design, layout, and overall experience of a website or app.",
           backDesc:
-            "The hidden engine: I manage security, data storage, and communication between the server and the user.",
+            "What runs behind the scenes: handles data, security, and everything users don’t directly see.",
           infraDesc:
-            "Deployment and environment: tools that ensure the software is available, stable, and easy to update.",
+            "How everything goes live: the tools and setup that keep applications online, stable, and running smoothly.",
         },
       },
       services: {
-        title: "Development Services",
+        title: "Services",
+        subtitle: "WHAT I OFFER",
         description:
           "Web engineering solutions focused on performance, scalability, and impeccable aesthetics.",
         quote: "* Custom technical quote based on project complexity.",
         plans: {
-  essential: {
-    title: "Essential",
-    desc: "Start building a professional online presence for your business.",
-    cta: "Get Started"
-  },
-  professional: {
-    title: "Professional",
-    desc: "Turn visitors into clients and grow your business.",
-    cta: "Get More Clients",
-    popular: "Popular"
-  },
-  extended: {
-    title: "Advanced",
-    desc: "Scale your business and automate key processes.",
-    cta: "Scale My Business"
-  }
-},
+          essential: {
+            title: "Essential",
+            desc: "Start building a professional online presence for your business.",
+            cta: "Get Started",
+          },
+          professional: {
+            title: "Professional",
+            desc: "Turn visitors into clients and grow your business.",
+            cta: "Get More Clients",
+            popular: "Popular",
+          },
+          extended: {
+            title: "Advanced",
+            desc: "Scale your business and automate key processes.",
+            cta: "Scale My Business",
+          },
+        },
         features: {
           responsive: "Premium Responsive Design",
           stack: "Next.js / React Implementation",
@@ -274,7 +272,9 @@ export const LanguageProvider = ({
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage, t }}>
+    <LanguageContext.Provider
+      value={{ language, setLanguage: handleSetLanguage, t }}
+    >
       {children}
       <AnimatePresence>
         {isChanging && (

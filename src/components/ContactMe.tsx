@@ -21,7 +21,7 @@ export default function SeccionContacto() {
         {/* Imagen Lateral Full Height / Header móvil */}
         <div className="col-span-12 md:col-span-5 lg:col-span-4 relative min-h-[250px] sm:min-h-[300px] md:min-h-[450px] border-b-2 md:border-b-0 md:border-r-2 border-black bg-black overflow-hidden block">
           <Image
-            src="/images/contact-left-removebg.png"
+            src="/images/1.png"
             alt="Damian Brito"
             fill
             className="object-cover object-top opacity-70"

@@ -2,90 +2,159 @@ const projects = [
   {
     title: "Rose-Reverie",
     image: "/images/projects/rose-reverie.png",
-    description: "Un sitio web moderno y profesional desarrollado para un salón de belleza, con el objetivo de mostrar servicios y ofrecer una experiencia intuitiva al usuario.",
-    descriptionEn: "A modern and professional website developed for a beauty salon, aiming to showcase services and provide an intuitive user experience.",
+    description:
+      "Un sitio web moderno y profesional desarrollado para un salón de belleza, con el objetivo de mostrar servicios y ofrecer una experiencia intuitiva al usuario.",
+    descriptionEn:
+      "A modern and professional website developed for a beauty salon, aiming to showcase services and provide an intuitive user experience.",
     github: "https://github.com/DamRandom/Rose-Reverie",
     vercel: "https://daly-hair-style.vercel.app/",
-    tags: ["beautysalon", "hairstudio", "frenchstyle", "brandidentity", "modernui"],
+    tags: [
+      "beautysalon",
+      "hairstudio",
+      "frenchstyle",
+      "brandidentity",
+      "modernui",
+    ],
     overlayLogo: "/images/projects/rose-reverie-logo.png",
-    overlayBackground: "#FDFCFB",
+    overlayBackground: "#182526",
   },
+
   {
     title: "PowerHaus",
     image: "/images/projects/powerhaus.png",
-    description: "PowerHaus es una plataforma de comercio electrónico moderna que ofrece electrodomésticos innovadores y de alta calidad.",
-    descriptionEn: "PowerHaus is a modern e-commerce platform offering innovative and high-quality home appliances.",
+    description:
+      "PowerHaus es una plataforma de comercio electrónico moderna que ofrece electrodomésticos innovadores y de alta calidad.",
+    descriptionEn:
+      "PowerHaus is a modern e-commerce platform offering innovative and high-quality home appliances.",
     github: "https://github.com/DamRandom/PowerHaus",
     vercel: "https://power-haus.vercel.app/",
-    tags: ["ecommercedesign", "homeappliances", "onlinestore", "retailux", "modernui"],
+    tags: [
+      "ecommerce",
+      "homeappliances",
+      "onlinestore",
+      "retail",
+      "modernui",
+    ],
     overlayLogo: "/images/projects/powerhaus-logo.png",
     overlayBackground: "#101828",
   },
+
   {
     title: "LitHub",
     image: "/images/projects/lithub.png",
-    description: "LitHub es una plataforma personal de gestión de libros que permite seguimiento de lectura, añadir libros y recibir recomendaciones.",
-    descriptionEn: "LitHub is a personal book management platform that allows for reading tracking, adding books, and receiving recommendations.",
+    description:
+      "LitHub es una plataforma personal de gestión de libros que permite seguimiento de lectura, añadir libros y recibir recomendaciones.",
+    descriptionEn:
+      "LitHub is a personal book management platform that allows reading tracking, adding books, and receiving recommendations.",
     github: "https://github.com/DamRandom/LitHub",
     vercel: "https://lithub.vercel.app",
-    tags: ["readingtracker", "bookdashboard", "digitallibrary", "epubreader", "personaltools"],
+    tags: [
+      "readingtracker",
+      "bookdashboard",
+      "digitallibrary",
+      "epubreader",
+      "personaltools",
+    ],
     overlayLogo: "/images/projects/lithub-logo.png",
     overlayBackground: "#F4F5F7",
   },
+
   {
     title: "Fravi Insurance Services",
     image: "/images/projects/fravi.png",
-    description: "Plataforma moderna que presenta seguros de auto, hogar y negocio con una interfaz clara y profesional. Incluye un diseño elegante.",
-    descriptionEn: "Modern platform showcasing auto, home, and business insurance with a clear and professional interface. Includes elegant design.",
+    description:
+      "Plataforma moderna que presenta seguros de auto, hogar y negocio con una interfaz clara y profesional.",
+    descriptionEn:
+      "Modern platform showcasing auto, home, and business insurance with a clear and professional interface.",
     github: "https://github.com/DamRandom/Fravi-Insurance-Services",
     vercel: "https://fravi-insurance-services.vercel.app/",
-    tags: ["insuranceux", "businessservices", "cleaninterface", "responsiveweb"],
+    tags: [
+      "insurance",
+      "businessservices",
+      "cleaninterface",
+      "responsiveweb",
+    ],
     overlayLogo: "/images/projects/fravi-logo.png",
     overlayBackground: "#FAFAF8",
   },
+
   {
     title: "Caring-Hearts",
     image: "/images/projects/caring-hearts.png",
-    description: "Sitio web para un negocio que ofrece servicios de cuidado de la salud mental. Diseño calmado y profesional orientado a transmitir confianza.",
-    descriptionEn: "Website for a business offering mental health care services. Calm and professional design oriented towards building trust.",
+    description:
+      "Sitio web para un negocio que ofrece servicios de cuidado de la salud mental con un diseño calmado y profesional.",
+    descriptionEn:
+      "Website for a business offering mental health care services with a calm and professional design.",
     github: "https://github.com/DamRandom/Caring-Hearts",
     vercel: "https://caring-hearts.vercel.app",
-    tags: ["mentalhealth", "therapyservices", "calmdesign", "minimalui"],
+    tags: [
+      "mentalhealth",
+      "therapyservices",
+      "calmdesign",
+      "minimalui",
+    ],
     overlayLogo: "/images/projects/caring-hearts-logo.png",
     overlayBackground: "#4A5443",
   },
+
   {
     title: "Yas-Service",
     image: "/images/projects/yas-services.png",
-    description: "Landing page de servicios que presenta de forma clara envíos de remesas, entregas de paquetes y planificación de viajes.",
-    descriptionEn: "Service landing page clearly presenting remittances, package deliveries, and travel planning.",
+    description:
+      "Landing page de servicios que presenta de forma clara envíos de remesas, entregas de paquetes y planificación de viajes.",
+    descriptionEn:
+      "Service landing page clearly presenting remittances, package deliveries and travel planning.",
     github: "https://github.com/DamRandom/Yas-Service",
     vercel: "https://yas-service.vercel.app",
-    tags: ["remittances", "packagedelivery", "travelsupport", "nextJS", "serviceplatform"],
+    tags: [
+      "remittances",
+      "packagedelivery",
+      "travelsupport",
+      "nextjs",
+      "serviceplatform",
+    ],
     overlayLogo: "/images/projects/yas-services-logo.png",
     overlayBackground: "#0A0F12",
   },
+
   {
     title: "Datalyze",
     image: "/images/projects/datalyze.png",
-    description: "Interfaz web para un sistema predictivo que analiza y visualiza la composición del personal docente en la UCI.",
-    descriptionEn: "Web interface for a predictive system that analyzes and visualizes the faculty composition at UCI.",
+    description:
+      "Interfaz web para un sistema predictivo que analiza y visualiza la composición del personal docente en la UCI.",
+    descriptionEn:
+      "Web interface for a predictive system that analyzes and visualizes faculty composition at UCI.",
     github: "https://github.com/DamRandom/Datalyze",
     vercel: "https://datalyze.vercel.app",
-    tags: ["predictivemodels", "dataviz", "educationanalytics", "datainsights", "nextjs"],
+    tags: [
+      "predictivemodels",
+      "dataviz",
+      "educationanalytics",
+      "datainsights",
+      "nextjs",
+    ],
     overlayLogo: "/images/projects/datalyze-logo.jpg",
-    overlayBackground: "#FFFFFF",
+    overlayBackground: "#F8F9FA",
   },
+
   {
     title: "Mariner Group Home",
     image: "/images/projects/MGH.png",
-    description: "Landing page elegante y accesible para Mariner Group Home, un proveedor de servicios para el hogar y la comunidad en Florida.",
-    descriptionEn: "Elegant and accessible landing page for Mariner Group Home, a home and community service provider in Florida.",
+    description:
+      "Landing page elegante y accesible para Mariner Group Home, un proveedor de servicios para el hogar y la comunidad en Florida.",
+    descriptionEn:
+      "Elegant and accessible landing page for Mariner Group Home, a home and community service provider in Florida.",
     github: "https://github.com/DamRandom/Mariner-Group-Home",
     vercel: "https://mariner-group-home.vercel.app",
-    tags: ["communitycare", "accessibledesign", "uiux", "homeservices", "nextjs"],
+    tags: [
+      "communitycare",
+      "accessibledesign",
+      "uiux",
+      "homeservices",
+      "nextjs",
+    ],
     overlayLogo: "/images/projects/MGH-logo.png",
-    overlayBackground: "#FFFFFF",
+    overlayBackground: "#F7F7F5",
   },
 ];
 

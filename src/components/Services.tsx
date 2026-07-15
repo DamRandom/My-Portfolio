@@ -14,13 +14,17 @@ export default function Services() {
       <div className="max-w-6xl mx-auto space-y-14">
         {/* Título */}
         <div className="w-full">
-          <h2 className="text-4xl font-bold tracking-tighter text-black uppercase mb-4">
-            {t("services.title")}
-          </h2>
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-4 gap-2 sm:gap-0">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-black uppercase">
+              {t("services.title")}
+            </h2>
+
+            <span className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.4em] text-slate-500">
+              {t("services.subtitle")}
+            </span>
+          </div>
+
           <div className="h-[2px] w-full bg-black" />
-          <p className="text-slate-600 font-medium text-lg mt-6 max-w-2xl">
-            {t("services.description")}
-          </p>
         </div>
 
         {/* Contenido de Desarrollo Web */}
