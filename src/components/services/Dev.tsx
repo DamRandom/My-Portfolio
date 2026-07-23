@@ -45,22 +45,22 @@ export default function DevServices() {
           </h3>
           <p className="text-sm text-slate-500 font-medium leading-relaxed min-h-[60px]">
             {language === "es"
-              ? "Empieza a tener presencia online profesional para tu negocio."
-              : "Start building a professional online presence for your business."}
+              ? "Lanza tu negocio en internet con un diseño premium."
+              : "Launch your business online with a premium design."}
           </p>
         </div>
 
         <ul className="space-y-4 mb-10 flex-1">
           {[
             language === "es"
-              ? "Tu negocio visible en internet 24/7"
-              : "Your business visible online 24/7",
+              ? "Presencia online 24/7"
+              : "24/7 online presence",
             language === "es"
-              ? "Página clara que explica lo que ofreces"
-              : "A clear page explaining what you offer",
+              ? "Web de negocios de alta conversión"
+              : "High-converting business website",
             language === "es"
-              ? "Diseño que genera confianza en tus clientes"
-              : "Design that builds trust with your clients"
+              ? "Diseño profesional y confiable"
+              : "Professional & trustworthy design"
           ].map((f) => (
             <li
               key={f}
@@ -81,37 +81,81 @@ export default function DevServices() {
       </div>
 
       {/* Profesional */}
-      <div className="min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center md:snap-align-none flex flex-col p-8 md:p-10 border-r-2 border-black bg-black text-white relative overflow-hidden group">
+      <div className="min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center md:snap-align-none flex flex-col p-8 md:p-10 border-r-2 border-black bg-slate-100 text-black relative overflow-hidden group">
         <div className="space-y-4 mb-8 relative z-10">
           <div className="flex justify-between items-start">
             <h3 className="text-xl font-bold uppercase tracking-widest">
               {language === "es" ? "Profesional" : "Professional"}
             </h3>
-            <span className="text-[8px] font-bold uppercase tracking-widest bg-white text-black px-2 py-1">
+            <span className="text-[8px] font-bold uppercase tracking-widest bg-black text-white px-2 py-1">
               {language === "es" ? "Popular" : "Popular"}
             </span>
           </div>
-          <p className="text-sm text-slate-400 font-medium leading-relaxed min-h-[60px]">
+          <p className="text-sm text-slate-600 font-medium leading-relaxed min-h-[60px]">
             {language === "es"
-              ? "Convierte visitantes en clientes y haz crecer tu negocio."
-              : "Turn visitors into clients and grow your business."}
+              ? "Convierte visitantes en clientes recurrentes."
+              : "Turn visitors into recurring clients."}
           </p>
         </div>
 
         <ul className="space-y-4 mb-10 flex-1 relative z-10">
           {[
             language === "es"
-              ? "Página diseñada para vender, no solo mostrar"
-              : "A website designed to sell, not just show",
+              ? "Diseño enfocado en ventas"
+              : "Sales-driven design",
             language === "es"
-              ? "Captación automática de clientes"
-              : "Automatic client lead capture",
+              ? "Captación automática de leads"
+              : "Automated lead generation",
             language === "es"
-              ? "Mejor posicionamiento en Google"
-              : "Better visibility on Google",
+              ? "Posicionamiento SEO en Google"
+              : "SEO Google Ranking"
+          ].map((f) => (
+            <li
+              key={f}
+              className="flex items-center gap-3 text-xs font-medium text-slate-700"
+            >
+              <Check size={14} className="text-black" />
+              {f}
+            </li>
+          ))}
+        </ul>
+
+        <button
+          onClick={() => handleSolicitar("profesional")}
+          className="w-full py-4 bg-black text-white text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-slate-800 transition-all active:scale-95 relative z-10"
+        >
+          {language === "es" ? "Quiero más clientes" : "Get More Clients"}
+        </button>
+
+        <div className="absolute -bottom-4 -right-4 text-8xl font-black italic text-black/[0.03] select-none pointer-events-none">
+          DEV
+        </div>
+      </div>
+
+      {/* Avanzado */}
+      <div className="min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center md:snap-align-none flex flex-col p-8 md:p-10 bg-black text-white hover:bg-slate-900 transition-colors group">
+        <div className="space-y-4 mb-8">
+          <h3 className="text-xl font-bold uppercase tracking-widest text-white">
+            {language === "es" ? "Avanzado" : "Advanced"}
+          </h3>
+          <p className="text-sm text-slate-400 font-medium leading-relaxed min-h-[60px]">
+            {language === "es"
+              ? "Automatiza procesos y escala tus operaciones."
+              : "Automate processes and scale operations."}
+          </p>
+        </div>
+
+        <ul className="space-y-4 mb-10 flex-1">
+          {[
             language === "es"
-              ? "Estructura pensada para aumentar conversiones"
-              : "Structure focused on increasing conversions"
+              ? "Sistema automatizado 24/7"
+              : "24/7 automated system",
+            language === "es"
+              ? "Automatización de procesos"
+              : "Process automation",
+            language === "es"
+              ? "Gestión avanzada de clientes"
+              : "Advanced client management"
           ].map((f) => (
             <li
               key={f}
@@ -124,58 +168,8 @@ export default function DevServices() {
         </ul>
 
         <button
-          onClick={() => handleSolicitar("profesional")}
-          className="w-full py-4 bg-white text-black text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-slate-200 transition-all active:scale-95 relative z-10"
-        >
-          {language === "es" ? "Quiero más clientes" : "Get More Clients"}
-        </button>
-
-        <div className="absolute -bottom-4 -right-4 text-8xl font-black italic text-white/[0.03] select-none pointer-events-none">
-          DEV
-        </div>
-      </div>
-
-      {/* Avanzado */}
-      <div className="min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center md:snap-align-none flex flex-col p-8 md:p-10 bg-white hover:bg-slate-50 transition-colors group">
-        <div className="space-y-4 mb-8">
-          <h3 className="text-xl font-bold uppercase tracking-widest text-black">
-            {language === "es" ? "Avanzado" : "Advanced"}
-          </h3>
-          <p className="text-sm text-slate-500 font-medium leading-relaxed min-h-[60px]">
-            {language === "es"
-              ? "Haz crecer tu negocio y automatiza procesos clave."
-              : "Scale your business and automate key processes."}
-          </p>
-        </div>
-
-        <ul className="space-y-4 mb-10 flex-1">
-          {[
-            language === "es"
-              ? "Sistema que trabaja por ti 24/7"
-              : "A system that works for you 24/7",
-            language === "es"
-              ? "Automatización de tareas repetitivas"
-              : "Automation of repetitive tasks",
-            language === "es"
-              ? "Gestión más eficiente de tus clientes"
-              : "More efficient client management",
-            language === "es"
-              ? "Solución adaptada a tu negocio"
-              : "Custom solution for your business"
-          ].map((f) => (
-            <li
-              key={f}
-              className="flex items-center gap-3 text-xs font-medium text-slate-600"
-            >
-              <Check size={14} className="text-black" />
-              {f}
-            </li>
-          ))}
-        </ul>
-
-        <button
           onClick={() => handleSolicitar("profesional1y")}
-          className="w-full py-4 bg-transparent border-2 border-black text-black text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-black hover:text-white transition-all active:scale-95"
+          className="w-full py-4 bg-transparent border-2 border-white text-white text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all active:scale-95"
         >
           {language === "es" ? "Escalar mi negocio" : "Scale My Business"}
         </button>

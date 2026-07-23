@@ -29,8 +29,8 @@ export const LanguageProvider = ({
     es: {
       hero: {
         portfolio: "Portafolio Personal",
-        role: "Ingeniero en Sistemas / Full Stack",
-        description: "Desarrollando productos web que la gente realmente usa.",
+        role: "Full Stack Developer",
+        description: "Building web products that people actually use.",
         ctaWork: "Explorar Trabajo",
         ctaContact: "Contacto Directo",
         status: "Disponible para Proyectos",
@@ -38,8 +38,9 @@ export const LanguageProvider = ({
       about: {
         title: "Sobre Mí",
         subtitle: "Perfil Personal",
-        p1: "Soy Damian Brito, Ingeniero en Sistemas.",
-        p2: "Me especializo en el desarrollo de páginas web, trabajando principalmente con pequeños y medianos negocios para construir su presencia digital. Cuento con experiencia en frontend y conocimientos en backend y bases de datos, lo que me permite abordar proyectos de forma integral.",
+        p1: "Full Stack Developer con 5 años de experiencia construyendo soluciones web para pequeñas y medianas empresas.",
+        p2: "Enfocado en rendimiento, arquitectura limpia y experiencia de usuario.",
+        p3: "Ayudando a negocios a mejorar su presencia digital y conversiones.",
         specialty: "Especialidad",
         focus: "Enfoque",
         interests: "Intereses",
@@ -138,7 +139,7 @@ export const LanguageProvider = ({
     en: {
       hero: {
         portfolio: "Personal Portfolio",
-        role: "Software Engineer / Full Stack",
+        role: "Full Stack Developer",
         description: "Building web products that people actually use.",
         ctaWork: "Explore Work",
         ctaContact: "Get in Touch",
@@ -147,8 +148,9 @@ export const LanguageProvider = ({
       about: {
         title: "About Me",
         subtitle: "Personal Profile",
-        p1: "I am Damian Brito, a Software Engineer.",
-        p2: "I specialize in web development, primarily working with small and medium-sized businesses to build their digital presence. I have experience in frontend development and knowledge of backend systems and databases, which allows me to approach projects comprehensively.",
+        p1: "Full Stack Developer with 5 years of experience building web solutions for small and medium businesses.",
+        p2: "Focused on performance, clean architecture and user experience.",
+        p3: "Helping businesses improve their digital presence and conversions.",
         specialty: "Specialty",
         focus: "Focus",
         interests: "Interests",

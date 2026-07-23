@@ -2,24 +2,11 @@
 
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
+import Image from "next/image";
 
 export default function SobreMi() {
   const { t } = useLanguage();
 
-  const items = [
-    {
-      label: t("about.specialty"),
-      value: t("about.specValue"),
-    },
-    {
-      label: t("about.focus"),
-      value: t("about.focusValue"),
-    },
-    {
-      label: t("about.interests"),
-      value: t("about.interestsValue"),
-    },
-  ];
 
   return (
     <section
@@ -43,9 +30,8 @@ export default function SobreMi() {
         </div>
 
         {/* Content */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-20 items-start">
-          {/* Left - Text */}
-          <div className="md:col-span-7 space-y-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-stretch">
+          <div className="lg:col-span-7 flex flex-col justify-center space-y-8">
             <motion.p
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -61,33 +47,44 @@ export default function SobreMi() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
               viewport={{ once: true }}
-              className="text-base sm:text-lg font-light text-slate-600 leading-relaxed max-w-2xl"
+              className="text-base sm:text-lg font-light text-slate-600 leading-relaxed max-w-2xl space-y-4"
             >
               <p>{t("about.p2")}</p>
+              <p>{t("about.p3")}</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="pt-8 border-t border-slate-200 mt-8"
+            >
+              <h3 className="text-xl sm:text-2xl font-bold text-black mb-2">
+                Full Stack Developer
+              </h3>
+              <p className="text-sm sm:text-base font-bold uppercase tracking-[0.2em] text-slate-500">
+                Frontend · Backend · Clean Architecture
+              </p>
             </motion.div>
           </div>
 
-          {/* Right - Items */}
-          <div className="md:col-span-5 flex flex-col gap-8 md:gap-12">
-            {items.map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
-                viewport={{ once: true }}
-                className="group flex flex-col gap-2 border-l-2 border-slate-200 pl-6 hover:border-black transition-colors"
-              >
-                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500 group-hover:text-black transition-colors">
-                  {item.label}
-                </span>
-
-                <p className="text-lg sm:text-xl font-medium text-black">
-                  {item.value}
-                </p>
-              </motion.div>
-            ))}
-          </div>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="lg:col-span-5 relative w-full min-h-[400px] sm:min-h-[500px] lg:min-h-full border-2 border-black bg-black overflow-hidden"
+          >
+            <Image
+              src="/images/1.png"
+              alt="Damian Brito"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover object-top opacity-80 hover:opacity-100 transition-opacity duration-500"
+              priority
+            />
+          </motion.div>
         </div>
       </div>
     </section>

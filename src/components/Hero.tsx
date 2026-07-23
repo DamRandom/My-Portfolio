@@ -2,9 +2,24 @@
 
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
+import { useCallback } from "react";
 
 export default function Hero() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+
+  const handleDownload = useCallback(() => {
+    const file =
+      language === "en"
+        ? "/DamianBritoResumeEN.pdf"
+        : "/DamianBritoResumeES.pdf";
+
+    const link = document.createElement("a");
+    link.href = file;
+    link.download = file.split("/").pop() || "cv.pdf";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  }, [language]);
 
   return (
     <section
@@ -18,9 +33,6 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="space-y-6 flex flex-col items-center"
         >
-          <span className="text-xs font-bold uppercase tracking-[0.4em] text-slate-400">
-            {t("hero.portfolio")} / 2025
-          </span>
           <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] font-medium tracking-tighter text-black uppercase leading-[0.9] mt-4">
             Damian <br />
             <span className="font-serif italic text-black lowercase tracking-normal">Brito.</span>
@@ -42,12 +54,12 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-10 w-full sm:w-auto justify-center">
-            <a 
-              href="#projects"
+            <button 
+              onClick={handleDownload}
               className="group flex justify-center items-center bg-black text-white px-8 py-5 sm:px-10 font-bold text-[10px] uppercase tracking-[0.3em] hover:bg-slate-800 transition-all w-full sm:w-auto sm:min-w-[240px]"
             >
-              <span>{t("hero.ctaWork")}</span>
-            </a>
+              <span>{language === "en" ? "Download CV" : "Descargar CV"}</span>
+            </button>
             <a 
               href="mailto:britohdamian@gmail.com"
               className="group flex justify-center items-center border border-black bg-transparent text-black px-8 py-5 sm:px-10 font-bold text-[10px] uppercase tracking-[0.3em] hover:bg-black hover:text-white transition-all w-full sm:w-auto sm:min-w-[240px]"

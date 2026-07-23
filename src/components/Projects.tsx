@@ -74,9 +74,11 @@ export default function Projects() {
                   key={project.title}
                   className="group flex flex-col h-full relative min-w-[85vw] sm:min-w-[70vw] md:min-w-0 snap-center md:snap-align-none"
                 >
-                  {/* Clean Image Container */}
-<div
-  className="relative aspect-[16/10] w-full mb-8 overflow-hidden border border-slate-200 group-hover:border-black transition-colors"
+{/* Clean Image Container */}
+<a
+  href={project.vercel}
+  target="_blank"
+  className="relative aspect-[16/10] w-full mb-8 overflow-hidden border border-slate-200 group-hover:border-black transition-colors block cursor-pointer"
 >
 
   {/* ================= PREVIEW (Logo + Background) ================= */}
@@ -92,6 +94,7 @@ export default function Projects() {
           src={project.overlayLogo}
           alt={`${project.title} logo`}
           fill
+          sizes="(max-width: 768px) 50vw, 30vw"
           className="object-contain"
         />
       </div>
@@ -103,9 +106,17 @@ export default function Projects() {
     src={project.image}
     alt={project.title}
     fill
+    sizes="(max-width: 768px) 100vw, 50vw"
     className="object-cover opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-700"
   />
-</div>
+
+  {/* ================= VIEW PROJECT OVERLAY ================= */}
+  <div className="absolute inset-0 bg-black/10 opacity-0 lg:group-hover:opacity-100 transition-all duration-700 flex items-center justify-center pointer-events-none">
+    <div className="bg-white text-black px-6 py-3 text-[10px] font-bold uppercase tracking-[0.2em] shadow-xl transform translate-y-4 lg:group-hover:translate-y-0 transition-transform duration-700">
+      {language === "en" ? "View Project" : "Ver Proyecto"}
+    </div>
+  </div>
+</a>
 
                   <div className="space-y-6 flex-1 flex flex-col">
                     <div className="flex justify-between items-start">
@@ -126,13 +137,13 @@ export default function Projects() {
                       {language === "en" && project.descriptionEn ? project.descriptionEn : project.description}
                     </p>
 
-                    <div className="flex flex-wrap gap-2 pt-6">
+                    <div className="flex flex-wrap gap-4 pt-6">
                       {project.tags.slice(0, 3).map(tag => (
                         <span 
                           key={tag}
-                          className="text-[9px] font-bold uppercase tracking-[0.2em] text-slate-500"
+                          className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500"
                         >
-                          {tag}
+                          #{tag}
                         </span>
                       ))}
                     </div>

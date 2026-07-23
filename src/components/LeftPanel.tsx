@@ -23,7 +23,7 @@ export default function LeftPanel({ activeSection }: LeftPanelProps) {
           <Link href="/">Damian Brito</Link>
         </h1>
         <h2 className="mt-3 text-lg font-bold tracking-tight text-black sm:text-xl">
-          Ingeniero en Sistemas
+          Full Stack Developer
         </h2>
         <p className="mt-6 max-w-xs leading-relaxed text-slate-500 font-medium">
           Especializado en el diseño y desarrollo de experiencias digitales de alto impacto, donde la técnica se encuentra con la estética.

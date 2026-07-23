@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { Phone, Mail, Coffee } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import React, { useState } from "react";
@@ -16,21 +15,10 @@ export default function SeccionContacto() {
       className="relative w-full bg-transparent py-24 px-6 md:px-12 lg:px-20 text-black"
       aria-label="Sección de contacto"
     >
-      <div className="relative max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 items-stretch gap-0 border-2 border-black bg-white">
+      <div className="relative max-w-6xl mx-auto border-2 border-black bg-white">
         
-        {/* Imagen Lateral Full Height / Header móvil */}
-        <div className="col-span-12 md:col-span-5 lg:col-span-4 relative min-h-[250px] sm:min-h-[300px] md:min-h-[450px] border-b-2 md:border-b-0 md:border-r-2 border-black bg-black overflow-hidden block">
-          <Image
-            src="/images/1.png"
-            alt="Damian Brito"
-            fill
-            className="object-cover object-top opacity-70"
-            priority
-          />
-        </div>
-
         {/* Panel de Información */}
-        <div className="col-span-12 md:col-span-7 lg:col-span-8 p-6 sm:p-10 md:p-16 flex flex-col relative">
+        <div className="p-6 sm:p-10 md:p-16 flex flex-col relative">
           
           {/* Título */}
           <div className="mb-14 w-full relative">

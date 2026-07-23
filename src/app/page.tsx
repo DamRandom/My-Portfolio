@@ -25,13 +25,11 @@ const ContactSection = dynamic(() => import("@/components/ContactMe"), {
   loading: () => <div className="h-32" />,
 });
 
-const DownloadButton = dynamic(
-  () => import("@/components/ui/DownloadButton"),
-  {
-    ssr: false,
-    loading: () => null,
-  }
-);
+const BackToTop = dynamic(() => import("@/components/ui/BackToTop"), {
+  ssr: false,
+});
+
+
 
 export default function Home() {
   return (
@@ -50,7 +48,7 @@ export default function Home() {
         <Services />
         <ProjectSection />
         <ContactSection />
-        <DownloadButton />
+        <BackToTop />
       </section>
     </main>
   );
