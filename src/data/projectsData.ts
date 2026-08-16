@@ -56,7 +56,7 @@ const projects = [
       "modernui",
     ],
     overlayLogo: "/images/projects/powerhaus-logo.png",
-    overlayBackground: "#101828",
+    overlayBackground: "#F9F8F5",
   },
 
   {
@@ -77,25 +77,6 @@ const projects = [
     ],
     overlayLogo: "/images/projects/lithub-logo.png",
     overlayBackground: "#F4F5F7",
-  },
-
-  {
-    title: "Fravi Insurance Services",
-    image: "/images/projects/fravi.png",
-    description:
-      "Plataforma moderna que presenta seguros de auto, hogar y negocio con una interfaz clara y profesional.",
-    descriptionEn:
-      "Modern platform showcasing auto, home, and business insurance with a clear and professional interface.",
-    github: "https://github.com/DamRandom/Fravi-Insurance-Services",
-    vercel: "https://fravi-insurance-services.vercel.app/",
-    tags: [
-      "insurance",
-      "businessservices",
-      "cleaninterface",
-      "responsiveweb",
-    ],
-    overlayLogo: "/images/projects/fravi-logo.png",
-    overlayBackground: "#FAFAF8",
   },
 
   {
@@ -159,7 +140,7 @@ const projects = [
 
   {
     title: "Mariner Group Home",
-    image: "/images/projects/MGH.png",
+    image: "/images/projects/MGH-shot.png",
     description:
       "Landing page elegante y accesible para Mariner Group Home, un proveedor de servicios para el hogar y la comunidad en Florida.",
     descriptionEn:
