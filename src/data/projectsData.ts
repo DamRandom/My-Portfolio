@@ -20,6 +20,26 @@ const projects = [
   },
 
   {
+  title: "Edward Barradas",
+  image: "/images/projects/edward-barradas-studio.png",
+  description:
+    "Portafolio editorial para Edward Barradas, un espacio visual centrado en fotografía masculina, retrato y exploración de la estética homoerótica.",
+  descriptionEn:
+    "Editorial portfolio for Edward Barradas, a visual space focused on male photography, portraiture, and the exploration of homoerotic aesthetics.",
+  github: "https://github.com/DamRandom/Edward-Barradas-Studio",
+  vercel: "https://edward-barradas-studio.vercel.app/",
+  tags: [
+    "photography",
+    "portrait",
+    "editorialdesign",
+    "visualarts",
+    "nextjs",
+  ],
+  overlayLogo: "/images/projects/edward-barradas-logo.png",
+  overlayBackground: "#F3F0E8",
+},
+
+  {
     title: "PowerHaus",
     image: "/images/projects/powerhaus.png",
     description:
